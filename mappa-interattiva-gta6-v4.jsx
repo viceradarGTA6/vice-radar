@@ -38,16 +38,37 @@ const DATA = {
     { id: "loc_016", nome: "Relitto Costa Est (esempio)", x: 82, y: 65, categoria: "collezionabile", item_id: "coll_006" },
   ],
   cheats: [
-    { id: "cheat_001", nome_effetto: "Munizioni Infinite (esempio)", codice: "ESEMPIO-CODICE-01", piattaforma: "tutte", modalita: "storia", note: "Disattiva gli obiettivi mentre è attivo." },
-    { id: "cheat_002", nome_effetto: "Salute Massima (esempio)", codice: "ESEMPIO-CODICE-02", piattaforma: "PC", modalita: "entrambe", note: "Nessuna limitazione nota." },
-    { id: "cheat_003", nome_effetto: "Super Salto (esempio)", codice: "ESEMPIO-CODICE-03", piattaforma: "tutte", modalita: "storia", note: "Aumenta molto l'altezza dei salti, utile per raggiungere tetti e cornicioni." },
-    { id: "cheat_004", nome_effetto: "Tempo Sempre Sereno (esempio)", codice: "ESEMPIO-CODICE-04", piattaforma: "PC", modalita: "storia", note: "Blocca le condizioni meteo sul sereno, utile per screenshot e voli." },
-    { id: "cheat_005", nome_effetto: "Nessuna Ricercata (esempio)", codice: "ESEMPIO-CODICE-05", piattaforma: "tutte", modalita: "entrambe", note: "Rimuove immediatamente il livello di ricercato attuale." },
-    { id: "cheat_006", nome_effetto: "Veicolo Casuale Istantaneo (esempio)", codice: "ESEMPIO-CODICE-06", piattaforma: "console", modalita: "storia", note: "Fa comparire un veicolo casuale vicino al giocatore." },
+    { id: "cheat_001", nome_effetto: "Munizioni Infinite (esempio)", codice: "ESEMPIO-CODICE-01", piattaforma: ["PlayStation", "Xbox"], modalita: "storia", note: "Disattiva gli obiettivi mentre è attivo." },
+    { id: "cheat_002", nome_effetto: "Salute Massima (esempio)", codice: "ESEMPIO-CODICE-02", piattaforma: ["PlayStation", "Xbox"], modalita: "entrambe", note: "Nessuna limitazione nota." },
+    { id: "cheat_003", nome_effetto: "Super Salto (esempio)", codice: "ESEMPIO-CODICE-03", piattaforma: ["PlayStation", "Xbox"], modalita: "storia", note: "Aumenta molto l'altezza dei salti, utile per raggiungere tetti e cornicioni." },
+    { id: "cheat_004", nome_effetto: "Tempo Sempre Sereno (esempio)", codice: "ESEMPIO-CODICE-04", piattaforma: ["PlayStation", "Xbox"], modalita: "storia", note: "Blocca le condizioni meteo sul sereno, utile per screenshot e voli." },
+    { id: "cheat_005", nome_effetto: "Nessuna Ricercata (esempio)", codice: "ESEMPIO-CODICE-05", piattaforma: ["PlayStation", "Xbox"], modalita: "entrambe", note: "Rimuove immediatamente il livello di ricercato attuale." },
+    { id: "cheat_006", nome_effetto: "Veicolo Casuale Istantaneo (esempio)", codice: "ESEMPIO-CODICE-06", piattaforma: ["PlayStation", "Xbox"], modalita: "storia", note: "Fa comparire un veicolo casuale vicino al giocatore." },
   ],
   missioni: [
     { id: "miss_001", nome: "Missione di Esempio", capitolo: 2, segreti_collegati: ["arma_001"], suggerimenti: "Esplora bene l'area prima di completare l'obiettivo principale, alcuni segreti diventano inaccessibili dopo." },
     { id: "miss_002", nome: "Il Segreto delle Colline", capitolo: 4, segreti_collegati: ["coll_002", "veh_003"], suggerimenti: "Torna sulle colline in diversi momenti della giornata: alcuni indizi cambiano con la luce." },
+  ],
+  news: [
+    { id: "news_013", titolo: "Un nuovo trailer in arrivo?", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "Secondo l'insider NateTheHate potrebbe arrivare presto un nuovo trailer o un gameplay reveal, forse legato alla presentazione finanziaria di Take-Two del 7 agosto o in vista della Gamescom. Nessuna conferma ufficiale da Rockstar: da prendere con cautela." },
+    { id: "news_014", titolo: "Movimenti sospetti sul sito ufficiale di Rockstar", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "Alcuni utenti segnalano modifiche al backend del sito ufficiale di Rockstar Games, interpretate dalla community come un possibile segnale di un annuncio imminente. Anche in questo caso non c'è alcuna conferma ufficiale." },
+    { id: "news_017", titolo: "L'insider Tom Henderson punta al 6 agosto per il Trailer 3", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "L'insider Tom Henderson prevede che il terzo trailer di GTA6 possa arrivare intorno al 6 agosto, un giorno prima della call di Take-Two. Rockstar non ha confermato alcuna data: resta una previsione basata sugli schemi passati dell'azienda." },
+    { id: "news_018", titolo: "Perché la call di Take-Two del 7 agosto insospettisce i fan", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "La presentazione dei risultati trimestrali di Take-Two è fissata per venerdì 7 agosto alle 8:00 ora della costa est USA, un orario insolito (di solito l'azienda comunica tra martedì e giovedì, a mercati chiusi). L'ultima volta che Take-Two usò uno slot simile fu per annunciare un rinvio di Red Dead Redemption 2, il che alimenta sia le speranze di novità su GTA6 sia i timori di un possibile ulteriore slittamento." },
+    { id: "news_019", titolo: "I mesi gratis di GTA+ non si accumulano", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "Rockstar ha chiarito che annullare e rifare un preordine non fa accumulare più mesi gratuiti di GTA+: il bonus è legato all'account ed è riscattabile una sola volta, indipendentemente da quante volte si cancella e si riordina." },
+    { id: "news_001", titolo: "Data di uscita ufficiale: 19 novembre 2026", tipo: "ufficiale", categoria: "Uscita", data: "2026-08-02", testo: "GTA6 uscirà ufficialmente il 19 novembre 2026, dopo due rinvii. Sarà disponibile su PS5 e Xbox Series X|S. Nessuna versione PC è stata annunciata al lancio. Non ci sarà accesso anticipato: tutte le edizioni si sbloccano lo stesso giorno." },
+    { id: "news_002", titolo: "Preordini aperti: prezzi ed edizioni", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "I preordini sono aperti dal 25 giugno 2026. La Standard Edition costa 79,99€ (gioco base), la Ultimate Edition 99,99€ con contenuti esclusivi sbloccati progressivamente durante la storia. È possibile fare l'upgrade da Standard a Ultimate con un supplemento di 20€. Le copie fisiche non includono un disco, solo un codice per il download." },
+    { id: "news_003", titolo: "Bonus preordine: Vintage Vice City Pack", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "Chi preordina riceve il Vintage Vice City Pack: una Vapid Stanier '55 con garage, abiti vintage per Jason e Lucia, e una skin arma in stile Tommy Vercetti, oltre a un mese gratis di GTA+." },
+    { id: "news_004", titolo: "Contenuti esclusivi della Ultimate Edition", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "La Ultimate Edition include tra gli altri: Grotti Cheetah '95, Vapid Dominator Buggy '67, Shitzu Squalo, Dinka Enduro, il kayak Crest, le armi Hawk & Little Morgan, pistole personalizzate per Jason (Girardi ES9) e Lucia (Klose K17), oltre alle officine esclusive Rideout Customs e One-Eyed Willie's e al salone Sara's Unisex Salon." },
+    { id: "news_005", titolo: "Benvenuti nello stato di Leonida", tipo: "ufficiale", categoria: "Ambientazione", data: "2026-08-02", testo: "Il gioco è ambientato nello stato fittizio di Leonida, ispirato alla Florida, con Vice City come metropoli principale. Sono confermate 6 regioni principali, ciascuna con estetica, NPC e routine diverse: dal neon della città alle paludi rurali." },
+    { id: "news_006", titolo: "Quanto sarà grande la mappa?", tipo: "rumor", categoria: "Ambientazione", data: "2026-08-02", testo: "Secondo stime della community, la mappa potrebbe essere fino al 70% più grande di quella di GTA V. Non è ancora una cifra confermata ufficialmente da Rockstar." },
+    { id: "news_007", titolo: "700+ interni esplorabili, altre regioni in arrivo dopo il lancio", tipo: "ufficiale", categoria: "Ambientazione", data: "2026-08-02", testo: "Sono confermati oltre 700 interni esplorabili. Al lancio saranno disponibili Vice City e l'intera Leonida; Rockstar ha confermato che altre città/regioni, come Gloriana (ispirata alla Georgia), arriveranno dopo il lancio con aggiornamenti in stile stagionale." },
+    { id: "news_008", titolo: "La fauna selvatica di Leonida", tipo: "ufficiale", categoria: "Ambientazione", data: "2026-08-02", testo: "Tra la fauna confermata: alligatori, serpenti, procioni, linci, cervi, puma e cinghiali." },
+    { id: "news_009", titolo: "Lucia e Jason: i due protagonisti", tipo: "ufficiale", categoria: "Personaggi", data: "2026-08-02", testo: "Lucia Caminos è la prima protagonista femminile della saga, cresciuta a Liberty City e appena uscita di prigione. Jason Duval è cresciuto tra truffatori ed è stato coinvolto nel traffico di droga. La loro relazione ricorda la dinamica \"Bonnie & Clyde\". Sarà possibile giocare con entrambi, ciascuno con abilità e prospettiva diverse." },
+    { id: "news_010", titolo: "NPC satirici confermati", tipo: "ufficiale", categoria: "Personaggi", data: "2026-08-02", testo: "Tra i personaggi non giocanti spiccano parodie in stile \"Florida Man\": Hammer Lady, Dad Bod Guy e Leonida Joker." },
+    { id: "news_011", titolo: "Novità di gameplay e tecnologia", tipo: "ufficiale", categoria: "Gameplay", data: "2026-08-02", testo: "Confermati grafica iperrealistica con ray tracing, fisica dei danni avanzata sui veicoli, ritorno delle immersioni subacquee, trasporti pubblici come i treni sopraelevati ed eventi ambientali dinamici come gli uragani. Il sistema di notorietà sembra evoluto, forse legato ai social media e all'uso di maschere." },
+    { id: "news_012", titolo: "Confermato: al lancio solo modalità storia, niente online", tipo: "ufficiale", categoria: "Gameplay", data: "2026-08-02", testo: "Rockstar ha confermato (comunicato ufficiale, FAQ del PlayStation Store e una dichiarazione a IGN) che GTA6 uscirà come esperienza esclusivamente single-player: nessuna modalità online al lancio. Non è stata data alcuna data né conferma che una nuova versione di GTA Online sia in sviluppo. Lo scenario più probabile, secondo gli osservatori, è che segua lo stesso schema di GTA V: storia al lancio, modalità online aggiunta in un secondo momento." },
+    { id: "news_015", titolo: "Si potrà passare da Jason a Lucia in ogni momento", tipo: "ufficiale", categoria: "Gameplay", data: "2026-08-02", testo: "Rockstar ha confermato che i giocatori potranno passare dal controllo di Jason a quello di Lucia mentre esplorano il mondo di gioco e durante alcune sequenze della storia, in modo simile (ma aggiornato) al cambio personaggio già visto in GTA V." },
+    { id: "news_016", titolo: "Uno smartphone in-game con social media", tipo: "ufficiale", categoria: "Gameplay", data: "2026-08-02", testo: "Confermato un sistema di social media integrato tramite lo smartphone del personaggio: si potranno guardare video virali, seguire influencer e restare aggiornati sugli eventi che accadono in giro per Leonida." },
   ],
 };
 
@@ -138,12 +159,19 @@ function searchAll(query) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const results = [];
-  DATA.items.forEach((it) => {
-    const hay = [it.nome, ...(it.tags || [])].join(" ").toLowerCase();
-    if (hay.includes(q)) results.push({ kind: "item", id: it.id, label: it.nome, sub: it.tipo });
-  });
-  DATA.cheats.forEach((c) => { if (c.nome_effetto.toLowerCase().includes(q)) results.push({ kind: "cheat", id: c.id, label: c.nome_effetto, sub: "trucco" }); });
-  DATA.missioni.forEach((m) => { if (m.nome.toLowerCase().includes(q)) results.push({ kind: "missione", id: m.id, label: m.nome, sub: "missione" }); });
+  if (!LOCKED_VIEWS.includes("mappa")) {
+    DATA.items.forEach((it) => {
+      const hay = [it.nome, ...(it.tags || [])].join(" ").toLowerCase();
+      if (hay.includes(q)) results.push({ kind: "item", id: it.id, label: it.nome, sub: it.tipo });
+    });
+  }
+  if (!LOCKED_VIEWS.includes("trucchi")) {
+    DATA.cheats.forEach((c) => { if (c.nome_effetto.toLowerCase().includes(q)) results.push({ kind: "cheat", id: c.id, label: c.nome_effetto, sub: "trucco" }); });
+  }
+  if (!LOCKED_VIEWS.includes("missioni")) {
+    DATA.missioni.forEach((m) => { if (m.nome.toLowerCase().includes(q)) results.push({ kind: "missione", id: m.id, label: m.nome, sub: "missione" }); });
+  }
+  DATA.news.forEach((n) => { if (n.titolo.toLowerCase().includes(q)) results.push({ kind: "news", id: n.id, label: n.titolo, sub: "notizia" }); });
   return results.slice(0, 8);
 }
 
@@ -272,7 +300,6 @@ const MODALITA_FILTERS = [
   { key: "tutte", label: "Tutte" },
   { key: "storia", label: "Storia" },
   { key: "online", label: "Online" },
-  { key: "entrambe", label: "Entrambe" },
 ];
 
 function CheatCard({ cheat, isHighlighted, registerRef, onAskAI }) {
@@ -297,8 +324,10 @@ function CheatCard({ cheat, isHighlighted, registerRef, onAskAI }) {
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, flexWrap: "wrap" }}>
         <div style={{ fontSize: 15, fontWeight: 800 }}>{cheat.nome_effetto}</div>
-        <div style={{ display: "flex", gap: 6 }}>
-          <span style={{ fontSize: 10, letterSpacing: 1, color: "#FFC24B", border: "1px solid #FFC24B", borderRadius: 20, padding: "2px 8px", textTransform: "uppercase" }}>{cheat.piattaforma}</span>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          {cheat.piattaforma.map((p) => (
+            <span key={p} style={{ fontSize: 10, letterSpacing: 1, color: "#FFC24B", border: "1px solid #FFC24B", borderRadius: 20, padding: "2px 8px", textTransform: "uppercase" }}>{p}</span>
+          ))}
           <span style={{ fontSize: 10, letterSpacing: 1, color: "#2DE3D6", border: "1px solid #2DE3D6", borderRadius: 20, padding: "2px 8px", textTransform: "uppercase" }}>{cheat.modalita}</span>
         </div>
       </div>
@@ -361,12 +390,16 @@ function CheatsPage({ highlight, onClearHighlight, onAskAI }) {
   const cheatRefs = useRef({});
 
   useEffect(() => {
+    if (highlight) setModFilter("tutte");
+  }, [highlight]);
+
+  useEffect(() => {
     if (!highlight) return;
     const el = cheatRefs.current[highlight.id];
     if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
     const t = setTimeout(onClearHighlight, 2000);
     return () => clearTimeout(t);
-  }, [highlight]);
+  }, [highlight, modFilter]);
 
   const filteredCheats = DATA.cheats.filter((c) => modFilter === "tutte" || c.modalita === modFilter || c.modalita === "entrambe");
 
@@ -429,6 +462,210 @@ function MissioniPage({ highlight, onClearHighlight, onAskAI }) {
           onAskAI={onAskAI}
         />
       ))}
+    </div>
+  );
+}
+
+/* ---------- Pagina Notizie ---------- */
+const NEWS_TYPE_FILTERS = [
+  { key: "tutte", label: "Tutte" },
+  { key: "ufficiale", label: "Ufficiali" },
+  { key: "rumor", label: "Rumor" },
+];
+
+function formatNewsDate(iso) {
+  const [y, m, d] = iso.split("-");
+  return `${d}/${m}/${y}`;
+}
+
+function NewsCard({ news, isHighlighted, registerRef, onAskAI }) {
+  const isRumor = news.tipo === "rumor";
+  return (
+    <div
+      ref={registerRef}
+      style={{
+        background: "#0F1530", border: `1px solid ${isHighlighted ? "#2DE3D6" : "#1C2340"}`, borderRadius: 10,
+        padding: 16, marginBottom: 12, transition: "border-color 0.3s ease",
+        boxShadow: isHighlighted ? "0 0 14px rgba(45,227,214,0.4)" : "none",
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, flexWrap: "wrap" }}>
+        <div style={{ fontSize: 15, fontWeight: 800 }}>{news.titolo}</div>
+        <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+          <span style={{
+            fontSize: 10, letterSpacing: 1, fontWeight: 800, borderRadius: 20, padding: "2px 8px", textTransform: "uppercase",
+            color: isRumor ? "#0B1026" : "#0B1026", background: isRumor ? "#FFC24B" : "#2DE3D6",
+          }}>
+            {isRumor ? "Rumor" : "Ufficiale"}
+          </span>
+        </div>
+      </div>
+      <div style={{ fontSize: 11, letterSpacing: 1, color: "#7A8099", marginTop: 6 }}>
+        {news.categoria.toUpperCase()} · {formatNewsDate(news.data)}
+      </div>
+      <div style={{ fontSize: 13, color: "#C7CBDA", marginTop: 10, lineHeight: 1.6 }}>{news.testo}</div>
+      <button
+        onClick={() => onAskAI(`Parlami di questa notizia: ${news.titolo}`)}
+        style={{ marginTop: 12, background: "transparent", border: "1px solid #FF3D8A", color: "#FF3D8A", borderRadius: 6, padding: "9px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+      >
+        Chiedi all'assistente →
+      </button>
+    </div>
+  );
+}
+
+function NewsPage({ highlight, onClearHighlight, onAskAI }) {
+  const [typeFilter, setTypeFilter] = useState("tutte");
+  const newsRefs = useRef({});
+
+  useEffect(() => {
+    if (highlight) setTypeFilter("tutte");
+  }, [highlight]);
+
+  useEffect(() => {
+    if (!highlight) return;
+    const el = newsRefs.current[highlight.id];
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    const t = setTimeout(onClearHighlight, 2000);
+    return () => clearTimeout(t);
+  }, [highlight, typeFilter]);
+
+  const officialNews = DATA.news.filter((n) => n.tipo === "ufficiale");
+  const rumorNews = DATA.news.filter((n) => n.tipo === "rumor");
+  const showOfficial = typeFilter === "tutte" || typeFilter === "ufficiale";
+  const showRumor = typeFilter === "tutte" || typeFilter === "rumor";
+
+  return (
+    <div style={{ padding: "20px 16px 40px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ fontSize: 12, color: "#7A8099", marginBottom: 16, lineHeight: 1.5 }}>
+        Aggiornata man mano che escono nuove informazioni ufficiali o rumor sul gioco. Le notizie "Rumor" non sono confermate da Rockstar.
+      </div>
+      <div style={{ display: "flex", gap: 8, marginBottom: 20, overflowX: "auto", paddingBottom: 2 }}>
+        {NEWS_TYPE_FILTERS.map((f) => (
+          <button
+            key={f.key}
+            onClick={() => setTypeFilter(f.key)}
+            style={{
+              flexShrink: 0,
+              background: typeFilter === f.key ? "#2DE3D6" : "transparent",
+              color: typeFilter === f.key ? "#0B1026" : "#2DE3D6",
+              border: "1px solid #2DE3D6", borderRadius: 20,
+              padding: "6px 14px", fontSize: 12, fontWeight: 700, letterSpacing: 0.5, cursor: "pointer", whiteSpace: "nowrap",
+            }}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      {showOfficial && (
+        <>
+          <div style={{ fontSize: 13, letterSpacing: 2, color: "#2DE3D6", fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>Notizie Ufficiali</div>
+          {officialNews.length === 0 ? (
+            <div style={{ color: "#7A8099", fontSize: 13, marginBottom: 20 }}>Nessuna notizia ufficiale al momento.</div>
+          ) : (
+            officialNews.map((n) => (
+              <NewsCard
+                key={n.id}
+                news={n}
+                isHighlighted={highlight?.kind === "news" && highlight.id === n.id}
+                registerRef={(el) => (newsRefs.current[n.id] = el)}
+                onAskAI={onAskAI}
+              />
+            ))
+          )}
+        </>
+      )}
+
+      {showRumor && (
+        <>
+          <div style={{ fontSize: 13, letterSpacing: 2, color: "#FFC24B", fontWeight: 800, margin: showOfficial ? "28px 0 12px" : "0 0 12px", textTransform: "uppercase" }}>Rumor</div>
+          {rumorNews.length === 0 ? (
+            <div style={{ color: "#7A8099", fontSize: 13 }}>Nessun rumor al momento.</div>
+          ) : (
+            rumorNews.map((n) => (
+              <NewsCard
+                key={n.id}
+                news={n}
+                isHighlighted={highlight?.kind === "news" && highlight.id === n.id}
+                registerRef={(el) => (newsRefs.current[n.id] = el)}
+                onAskAI={onAskAI}
+              />
+            ))
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ---------- Pagina Info / Assistenza ---------- */
+const SUPPORT_EMAIL = "supporto@viceradar.it"; // TODO: indirizzo provvisorio, sostituire con una casella vera prima del lancio pubblico
+
+const UPCOMING_SECTIONS = [
+  { titolo: "Mappa Interattiva", testo: "Dove trovare veicoli rari, armi, collezionabili ed easter egg in giro per Leonida, più dettagliata della minimappa in-game. Con filtri per categoria e ricerca." },
+  { titolo: "Trucchi", testo: "Tutti i codici e le tecniche per la modalità storia e online, con le piattaforme su cui funzionano." },
+  { titolo: "Missioni & Segreti", testo: "Suggerimenti per superare i capitoli della storia e scoprire i segreti collegati agli oggetti nascosti nella mappa." },
+  { titolo: "Assistente IA", testo: "Un assistente che risponde alle tue domande mentre giochi (\"come raggiungo questo punto?\", \"come supero questa missione?\"), basandosi sui dati reali del sito. Sarà una funzione riservata agli abbonati premium." },
+];
+
+function PresentazionePage() {
+  return (
+    <div style={{ padding: "20px 16px 40px", maxWidth: 700, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ fontSize: 13, letterSpacing: 2, color: "#2DE3D6", fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>Cosa sarà Vice // Radar</div>
+      <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, marginBottom: 24 }}>
+        Vice // Radar è pensato per essere uno strumento pratico da usare mentre giochi a GTA6, non un sito di notizie generico. Le sezioni qui sotto sono in preparazione e si attiveranno con dati reali quando il gioco uscirà, il 19 novembre 2026. Nel frattempo puoi seguire le Notizie per restare aggiornato su tutto quello che viene confermato o rumoreggiato.
+      </div>
+
+      {UPCOMING_SECTIONS.map((s) => (
+        <div key={s.titolo} style={{ background: "#0F1530", border: "1px solid #1C2340", borderRadius: 10, padding: 16, marginBottom: 12 }}>
+          <div style={{ fontSize: 15, fontWeight: 800, marginBottom: 6 }}>{s.titolo}</div>
+          <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.5 }}>{s.testo}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SupportoPage() {
+  return (
+    <div style={{ padding: "20px 16px 40px", maxWidth: 700, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ fontSize: 13, letterSpacing: 2, color: "#FFC24B", fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>Assistenza</div>
+      <div style={{ background: "#0F1530", border: "1px solid #1C2340", borderRadius: 10, padding: 16 }}>
+        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, marginBottom: 12 }}>
+          Hai trovato un problema sul sito o hai un suggerimento? Scrivici, ti rispondiamo il prima possibile.
+        </div>
+        <a href={`mailto:${SUPPORT_EMAIL}`} style={{ display: "inline-block", color: "#2DE3D6", border: "1px solid #2DE3D6", borderRadius: 6, padding: "9px 14px", fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
+          {SUPPORT_EMAIL}
+        </a>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- Sezioni non ancora attive ("Prossimamente") ---------- */
+const COMING_SOON_COPY = {
+  mappa: { titolo: "Mappa Interattiva", testo: "Qui troverai veicoli rari, armi, collezionabili ed easter egg sparsi per Leonida. La sezione si attiva con dati reali al lancio del gioco." },
+  trucchi: { titolo: "Trucchi", testo: "Codici e tecniche per la storia e l'online. La sezione si attiva con dati reali al lancio del gioco." },
+  missioni: { titolo: "Missioni & Segreti", testo: "Consigli per superare i capitoli della storia e i segreti collegati. La sezione si attiva con dati reali al lancio del gioco." },
+  assistente: { titolo: "Assistente IA", testo: "L'assistente che risponde alle tue domande mentre giochi, riservato agli abbonati premium. Si attiva insieme ai dati reali del gioco." },
+};
+
+function ComingSoonPage({ view, onGoToNews }) {
+  const copy = COMING_SOON_COPY[view];
+  return (
+    <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
+      <div style={{ maxWidth: 420, textAlign: "center" }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, color: "#FFC24B", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>Prossimamente</div>
+        <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12 }}>{copy.titolo}</div>
+        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, marginBottom: 20 }}>{copy.testo}</div>
+        <button
+          onClick={onGoToNews}
+          style={{ background: "#FF3D8A", border: "none", borderRadius: 6, padding: "10px 18px", color: "#0B1026", fontWeight: 800, fontSize: 12, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
+        >
+          Vai alle Notizie
+        </button>
+      </div>
     </div>
   );
 }
@@ -642,18 +879,25 @@ function MapCanvas({ locations, selected, onSelect, height }) {
 
 /* ---------- App principale ---------- */
 const VIEWS = [
+  { key: "presentazione", label: "Presentazione", shortLabel: "Home" },
+  { key: "news", label: "Notizie", shortLabel: "Notizie" },
   { key: "mappa", label: "Mappa", shortLabel: "Mappa" },
   { key: "trucchi", label: "Trucchi", shortLabel: "Trucchi" },
   { key: "missioni", label: "Missioni & Segreti", shortLabel: "Segreti" },
   { key: "assistente", label: "Assistente IA", shortLabel: "Assistente" },
+  { key: "supporto", label: "Assistenza", shortLabel: "Supporto" },
 ];
+
+/* sezioni senza dati reali ancora: restano nel menu ma mostrano "Prossimamente".
+   Quando avremo contenuti veri per una sezione, basta toglierla da questo elenco. */
+const LOCKED_VIEWS = ["mappa", "trucchi", "missioni", "assistente"];
 
 export default function GTA6Map() {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("tutti");
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState("");
-  const [view, setView] = useState("mappa"); // sezione principale: "mappa" | "trucchi" | "missioni" | "assistente"
+  const [view, setView] = useState("presentazione"); // sezione principale, vedi VIEWS
   const [tab, setTab] = useState("dettagli"); // sotto-tab del pannello mappa su desktop: "dettagli" | "assistente"
   const [prefill, setPrefill] = useState("");
   const [highlight, setHighlight] = useState(null); // { kind: "cheat" | "missione", id } per la ricerca
@@ -681,6 +925,9 @@ export default function GTA6Map() {
     } else if (r.kind === "missione") {
       setView("missioni");
       setHighlight({ kind: "missione", id: r.id });
+    } else if (r.kind === "news") {
+      setView("news");
+      setHighlight({ kind: "news", id: r.id });
     }
   }
 
@@ -692,9 +939,10 @@ export default function GTA6Map() {
           <span style={{ fontWeight: 900, fontSize: isMobile ? 22 : "clamp(20px, 4vw, 30px)", letterSpacing: "1.5px", background: "linear-gradient(90deg,#FF3D8A,#FFC24B,#2DE3D6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", textTransform: "uppercase" }}>
             Vice // Radar
           </span>
-          {!isMobile && view === "mappa" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{locations.length} PUNTI ATTIVI</span>}
-          {!isMobile && view === "trucchi" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{DATA.cheats.length} TRUCCHI</span>}
-          {!isMobile && view === "missioni" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{DATA.missioni.length} MISSIONI</span>}
+          {!isMobile && !LOCKED_VIEWS.includes(view) && view === "mappa" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{locations.length} PUNTI ATTIVI</span>}
+          {!isMobile && view === "news" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{DATA.news.length} NOTIZIE</span>}
+          {!isMobile && !LOCKED_VIEWS.includes(view) && view === "trucchi" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{DATA.cheats.length} TRUCCHI</span>}
+          {!isMobile && !LOCKED_VIEWS.includes(view) && view === "missioni" && <span style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6" }}>{DATA.missioni.length} MISSIONI</span>}
         </div>
 
         {/* Nav principale, solo desktop: su mobile la stessa scelta è in fondo alla pagina */}
@@ -735,7 +983,7 @@ export default function GTA6Map() {
           )}
         </div>
 
-        {view === "mappa" && (
+        {view === "mappa" && !LOCKED_VIEWS.includes("mappa") && (
         <div style={{ display: "flex", gap: 8, marginTop: 12, overflowX: isMobile ? "auto" : "visible", paddingBottom: 2 }}>
           {CATS.map((c) => (
             <button
@@ -759,13 +1007,19 @@ export default function GTA6Map() {
       </div>
 
       {/* Contenuto */}
-      {view === "trucchi" ? (
+      {view === "presentazione" ? (
         <div style={{ flex: 1 }}>
-          <CheatsPage highlight={highlight} onClearHighlight={() => setHighlight(null)} onAskAI={onAskAI} />
+          <PresentazionePage />
         </div>
-      ) : view === "missioni" ? (
+      ) : view === "supporto" ? (
         <div style={{ flex: 1 }}>
-          <MissioniPage highlight={highlight} onClearHighlight={() => setHighlight(null)} onAskAI={onAskAI} />
+          <SupportoPage />
+        </div>
+      ) : LOCKED_VIEWS.includes(view) ? (
+        <ComingSoonPage view={view} onGoToNews={() => setView("news")} />
+      ) : view === "news" ? (
+        <div style={{ flex: 1 }}>
+          <NewsPage highlight={highlight} onClearHighlight={() => setHighlight(null)} onAskAI={onAskAI} />
         </div>
       ) : isMobile ? (
         <div style={{ padding: 14, flex: 1 }}>

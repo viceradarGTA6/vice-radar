@@ -1,0 +1,104 @@
+{
+  "_nota": "Dati SEGNAPOSTO/inventati per testare la struttura del sito. Da sostituire con dati reali all'uscita di GTA6.",
+
+  "items": [
+    {
+      "id": "veh_001",
+      "tipo": "veicolo",
+      "nome": "Furgone Corazzato (esempio)",
+      "rarità": "raro",
+      "modalità": "online",
+      "descrizione": "Veicolo resistente con blindatura leggera, utile per missioni di trasporto.",
+      "come_ottenerlo": "Completare una serie di consegne senza danni al veicolo.",
+      "immagine": "",
+      "location_id": "loc_001",
+      "tags": ["corazzato", "lento", "resistente"]
+    },
+    {
+      "id": "arma_001",
+      "tipo": "arma",
+      "nome": "Fucile a Pompa Modificato (esempio)",
+      "rarità": "leggendario",
+      "modalità": "storia",
+      "descrizione": "Versione potenziata trovabile solo in un capitolo specifico.",
+      "come_ottenerlo": "Nascosta in un edificio abbandonato, richiede di esplorare fuori dai percorsi principali.",
+      "immagine": "",
+      "location_id": "loc_002",
+      "tags": ["capitolo 2", "danno alto"]
+    },
+    {
+      "id": "coll_001",
+      "tipo": "collezionabile",
+      "nome": "Statuetta Nascosta (esempio)",
+      "rarità": "unico",
+      "modalità": "entrambe",
+      "descrizione": "Una delle 20 statuette da collezionare sparse per la mappa.",
+      "come_ottenerlo": "Trovarla esplorando l'area costiera.",
+      "immagine": "",
+      "location_id": "loc_003",
+      "tags": ["collezione", "costa"]
+    }
+  ],
+
+  "locations": [
+    {
+      "id": "loc_001",
+      "nome": "Deposito Portuale (esempio)",
+      "coordinate_x": 62,
+      "coordinate_y": 34,
+      "categoria": "veicolo",
+      "item_id": "veh_001",
+      "descrizione": "Vicino ai moli, controllare dietro i container.",
+      "icona": "veicolo"
+    },
+    {
+      "id": "loc_002",
+      "nome": "Edificio Abbandonato (esempio)",
+      "coordinate_x": 45,
+      "coordinate_y": 20,
+      "categoria": "arma",
+      "item_id": "arma_001",
+      "descrizione": "Entrare dal retro, oggetto nascosto al secondo piano.",
+      "icona": "arma"
+    },
+    {
+      "id": "loc_003",
+      "nome": "Spiaggia Sud (esempio)",
+      "coordinate_x": 30,
+      "coordinate_y": 70,
+      "categoria": "collezionabile",
+      "item_id": "coll_001",
+      "descrizione": "Vicino a un relitto sulla spiaggia.",
+      "icona": "collezionabile"
+    }
+  ],
+
+  "cheats": [
+    {
+      "id": "cheat_001",
+      "nome_effetto": "Munizioni Infinite (esempio)",
+      "codice": "ESEMPIO-CODICE-01",
+      "piattaforma": "tutte",
+      "modalità": "storia",
+      "note": "Disattiva gli obiettivi mentre è attivo."
+    },
+    {
+      "id": "cheat_002",
+      "nome_effetto": "Salute Massima (esempio)",
+      "codice": "ESEMPIO-CODICE-02",
+      "piattaforma": "PC",
+      "modalità": "entrambe",
+      "note": "Nessuna limitazione nota."
+    }
+  ],
+
+  "missioni": [
+    {
+      "id": "miss_001",
+      "nome": "Missione di Esempio",
+      "capitolo": 2,
+      "segreti_collegati": ["arma_001"],
+      "suggerimenti": "Esplora bene l'area prima di completare l'obiettivo principale, alcuni segreti diventano inaccessibili dopo."
+    }
+  ]
+}

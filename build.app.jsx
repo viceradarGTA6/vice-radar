@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from "react";
+const { useState, useMemo, useRef, useEffect, useLayoutEffect } = React;
 
 const DATA = {
   items: [
@@ -1486,7 +1486,7 @@ function detectInitialLang() {
   return nav && nav.toLowerCase().startsWith("en") ? "en" : "it";
 }
 
-export default function GTA6Map() {
+function GTA6Map() {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("tutti");
   const [selected, setSelected] = useState(null);
@@ -1728,3 +1728,5 @@ export default function GTA6Map() {
     </div>
   );
 }
+
+window.GTA6Map = GTA6Map;

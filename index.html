@@ -14,7 +14,14 @@
 
   gtag('config', 'G-VBRQTM7H0W');
 </script>
-<style>html,body,#root{height:100%;margin:0;}</style>
+<style>
+html,body,#root{height:100%;margin:0;}
+html{scroll-behavior:smooth;}
+@keyframes vrFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.vr-fade-in{animation:vrFadeIn .45s ease-out 1;}
+@keyframes vrHighlightPulse{0%{box-shadow:0 0 0 0 rgba(45,227,214,0.55);}60%{box-shadow:0 0 0 18px rgba(45,227,214,0);}100%{box-shadow:0 0 0 0 rgba(45,227,214,0);}}
+.vr-highlight{animation:vrHighlightPulse 1.4s ease-out 1;border-radius:12px;}
+</style>
 </head>
 <body>
 <div id="root"></div>
@@ -22,7 +29,7 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script>
-fetch("build.app.jsx?v=13")
+fetch("build.app.jsx?v=20")
   .then((r) => r.text())
   .then((src) => {
     const code = Babel.transform(src, { presets: [["react", { runtime: "classic" }]] }).code;

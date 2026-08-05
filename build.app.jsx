@@ -50,6 +50,8 @@ const DATA = {
     { id: "miss_002", nome: "Il Segreto delle Colline", capitolo: 4, segreti_collegati: ["coll_002", "veh_003"], suggerimenti: "Torna sulle colline in diversi momenti della giornata: alcuni indizi cambiano con la luce." },
   ],
   news: [
+    { id: "news_022", titolo: "Verifica dell'età in Australia: Rockstar rischia una multa fino a 49,5 milioni di dollari australiani", tipo: "ufficiale", categoria: "Annunci", data: "2026-08-05", testo: "Le nuove norme australiane sulla sicurezza online (Online Safety Amendment Act) impongono la verifica dell'età per i giochi classificati R18+ come la saga GTA, con multe fino a 49,5 milioni di dollari australiani (circa 35 milioni di dollari USA) in caso di mancato rispetto. La regola riguarda però solo le componenti online: dato che GTA6 uscirà solo in modalità storia senza online al lancio, potrebbe non essere soggetto all'obbligo fin da subito. Rockstar ha già del codice di verifica dormiente nei file di GTA Online, ma non lo ha ancora attivato." },
+    { id: "news_023", titolo: "Manutenzione a sorpresa sui server Rockstar riaccende le speranze sul Trailer 3", tipo: "rumor", categoria: "Annunci", data: "2026-08-04", testo: "Rockstar ha annunciato una manutenzione dei servizi account dalle 4:00 alle 6:00 UTC del 4 agosto, descritta come ordinaria. La community l'ha comunque interpretata come un possibile preludio a un nuovo reveal, complice anche una presunta data \"4 agosto\" individuata su un fermo immagine del primo trailer. Rockstar non ha confermato nulla." },
     { id: "news_020", titolo: "Take-Two dà la caccia ai finti trailer generati con l'IA", tipo: "ufficiale", categoria: "Annunci", data: "2026-08-03", testo: "Take-Two ha iniziato a inviare notifiche DMCA contro canali YouTube (tra cui il noto \"Vice Nation\") che pubblicavano video di Jason e Lucia generati con intelligenza artificiale spacciandoli per leak reali. Il CEO Strauss Zelnick ha ribadito pubblicamente che l'IA generativa non ha alcun ruolo nello sviluppo di GTA6." },
     { id: "news_021", titolo: "Sfatato: GTA6 non uscirà su Nintendo Switch 2", tipo: "ufficiale", categoria: "Uscita", data: "2026-08-03", testo: "Nonostante le speculazioni ricorrenti online, Rockstar e Take-Two non hanno mai annunciato una versione per Nintendo Switch 2: le uniche piattaforme confermate restano PS5 e Xbox Series X|S. Qualsiasi presunto preordine o accesso beta per Switch 2 è falso." },
     { id: "news_013", titolo: "Un nuovo trailer in arrivo?", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "Secondo l'insider NateTheHate potrebbe arrivare presto un nuovo trailer o un gameplay reveal, forse legato alla presentazione finanziaria di Take-Two del 7 agosto o in vista della Gamescom. Nessuna conferma ufficiale da Rockstar: da prendere con cautela." },
@@ -91,6 +93,8 @@ const CATEGORY_LABELS = {
 /* Traduzioni inglesi delle notizie, indicizzate per id: DATA.news resta la fonte in italiano,
    qui teniamo solo titolo/testo in inglese per non duplicare l'intero oggetto. */
 const NEWS_EN = {
+  news_022: { titolo: "Age verification in Australia: Rockstar risks a fine of up to AU$49.5 million", testo: "Australia's new online safety rules (Online Safety Amendment Act) require age verification for R18+ rated games like the GTA series, with fines of up to AU$49.5 million (about $35 million USD) for non-compliance. The rule only covers online components, though: since GTA6 will launch as a story-only, offline experience with no online mode, it may not be subject to the requirement right away. Rockstar already has dormant verification code inside GTA Online's files but hasn't activated it yet." },
+  news_023: { titolo: "Surprise Rockstar server maintenance reignites Trailer 3 hopes", testo: "Rockstar announced account services maintenance from 4:00 to 6:00 UTC on August 4, described as routine. The community still read it as a possible prelude to a new reveal, fueled further by a supposed \"August 4\" date fans spotted in a freeze-frame of the first trailer. Rockstar has confirmed nothing." },
   news_020: { titolo: "Take-Two cracks down on AI-generated fake trailers", testo: "Take-Two has started issuing DMCA takedown notices against YouTube channels (including the well-known \"Vice Nation\") that posted AI-generated videos of Jason and Lucia passed off as real leaks. CEO Strauss Zelnick publicly reiterated that generative AI plays no role in GTA6's development." },
   news_021: { titolo: "Debunked: GTA6 is not coming to Nintendo Switch 2", testo: "Despite recurring online speculation, Rockstar and Take-Two have never announced a Nintendo Switch 2 version: the only confirmed platforms remain PS5 and Xbox Series X|S. Any supposed pre-order or beta access for Switch 2 is fake." },
   news_013: { titolo: "A new trailer incoming?", testo: "According to insider NateTheHate, a new trailer or gameplay reveal could arrive soon, possibly tied to Take-Two's August 7 financial presentation or ahead of Gamescom. No official confirmation from Rockstar yet — take it with caution." },
@@ -681,32 +685,53 @@ const UPCOMING_SECTIONS = [
 
 const LAUNCH_DATE = new Date("2026-11-19T00:00:00");
 
-const HERO_TEXT = {
+const GAME_HERO_TEXT = {
   it: {
     tag: "🔥 GTA6 · 19 Novembre 2026",
     titleLine1: "Leonida ti aspetta.",
     titleLine2: "Tu sarai pronto?",
-    subtitle: "Vice // Radar è il compagno pratico da tenere aperto mentre giochi: mappa dei segreti, trucchi e un assistente IA, tutto in un posto solo. Niente notizie riciclate: solo strumenti utili, pronti per il lancio.",
+    subtitle: "Il prossimo capitolo di Grand Theft Auto: ambientato nello stato fittizio di Leonida, tra il neon di Vice City e le paludi della provincia. Tutto quello che sappiamo finora, in un posto solo.",
     countdownLabel: "⏳ Mancano all'uscita",
     unitDays: "Giorni",
     unitHours: "Ore",
     unitMinutes: "Minuti",
     unitSeconds: "Secondi",
     btnNews: "Segui le Notizie →",
-    btnFeatures: "Scopri le funzioni",
+    btnFeatures: "Prezzo & piattaforme",
   },
   en: {
     tag: "🔥 GTA6 · November 19, 2026",
     titleLine1: "Leonida is waiting.",
     titleLine2: "Will you be ready?",
-    subtitle: "Vice // Radar is the practical companion to keep open while you play: a map of secrets, cheats and an AI assistant, all in one place. No recycled news — just useful tools, ready for launch.",
+    subtitle: "The next chapter of Grand Theft Auto: set in the fictional state of Leonida, between the neon of Vice City and the swamps of the countryside. Everything we know so far, in one place.",
     countdownLabel: "⏳ Countdown to release",
     unitDays: "Days",
     unitHours: "Hours",
     unitMinutes: "Minutes",
     unitSeconds: "Seconds",
     btnNews: "Follow the News →",
+    btnFeatures: "Price & platforms",
+  },
+};
+
+const SITE_HERO_TEXT = {
+  it: {
+    tag: "🎮 Creato dai fan, per i fan",
+    titleLine1: "Vice // Radar",
+    titleLine2: "Il tuo compagno per Leonida",
+    subtitle: "Mappa dei segreti, trucchi, missioni e un assistente IA: tutto quello che ti serve mentre giochi, in un unico posto. Niente notizie riciclate: solo strumenti pratici, pronti per il lancio.",
+    pills: ["🗺️ Mappa", "🎮 Trucchi", "🕵️ Missioni", "🤖 Assistente IA"],
+    btnFeatures: "Scopri le funzionalità",
+    btnGame: "Tutto sul gioco →",
+  },
+  en: {
+    tag: "🎮 Made by fans, for fans",
+    titleLine1: "Vice // Radar",
+    titleLine2: "Your companion for Leonida",
+    subtitle: "A map of secrets, cheats, missions and an AI assistant: everything you need while you play, all in one place. No recycled news — just practical tools, ready for launch.",
+    pills: ["🗺️ Map", "🎮 Cheats", "🕵️ Missions", "🤖 AI Assistant"],
     btnFeatures: "Discover the features",
+    btnGame: "All about the game →",
   },
 };
 
@@ -726,9 +751,22 @@ function useCountdown(target) {
   };
 }
 
-function PresentazioneHero({ onGoToNews, lang }) {
+/* scroll fluido verso una sezione della stessa pagina, con un bagliore temporaneo
+   sull'arrivo per far capire subito a cosa si riferiva il bottone cliccato */
+function scrollToSectionWithHighlight(id) {
+  if (typeof document === "undefined") return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  el.classList.remove("vr-highlight");
+  void el.offsetWidth; // forza il reflow per poter ripetere l'animazione anche se già mostrata prima
+  el.classList.add("vr-highlight");
+  setTimeout(() => el.classList.remove("vr-highlight"), 1600);
+}
+
+function GameHero({ onGoToNews, lang }) {
   const { days, hours, minutes, seconds } = useCountdown(LAUNCH_DATE);
-  const t = HERO_TEXT[lang];
+  const t = GAME_HERO_TEXT[lang];
   const countdownUnits = [
     { value: days, label: t.unitDays },
     { value: hours, label: t.unitHours },
@@ -783,12 +821,68 @@ function PresentazioneHero({ onGoToNews, lang }) {
           >
             {t.btnNews}
           </button>
-          <a
-            href="#funzioni"
-            style={{ display: "inline-flex", alignItems: "center", background: "transparent", border: "1px solid #2DE3D6", borderRadius: 8, padding: "14px 26px", color: "#2DE3D6", fontWeight: 800, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", textDecoration: "none" }}
+          <button
+            onClick={() => scrollToSectionWithHighlight("prezzo")}
+            style={{ display: "inline-flex", alignItems: "center", background: "transparent", border: "1px solid #2DE3D6", borderRadius: 8, padding: "14px 26px", color: "#2DE3D6", fontWeight: 800, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
           >
             {t.btnFeatures}
-          </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* hero della home: presenta il sito Vice // Radar, niente countdown né hype sul gioco
+   (quello vive nella pagina dedicata "Il Gioco", vedi GameHero) */
+function SiteHero({ onGoToGame, lang }) {
+  const t = SITE_HERO_TEXT[lang];
+
+  return (
+    <div style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #0B1026 0%, #171E45 55%, #0B1026 100%)", padding: "clamp(48px, 9vw, 96px) 20px clamp(56px, 8vw, 88px)", textAlign: "center" }}>
+      {/* bagliore dietro al titolo, effetto "sole" synthwave */}
+      <div style={{ position: "absolute", top: "-20%", left: "50%", transform: "translateX(-50%)", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,227,214,0.35) 0%, rgba(255,61,138,0.18) 40%, rgba(255,194,75,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
+
+      {/* griglia prospettica in fondo, stile skyline al tramonto */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", overflow: "hidden", pointerEvents: "none", opacity: 0.5 }}>
+        <div style={{
+          position: "absolute", left: "-25%", right: "-25%", bottom: "-10%", height: "220%",
+          backgroundImage: "linear-gradient(90deg, rgba(45,227,214,0.5) 1px, transparent 1px), linear-gradient(0deg, rgba(45,227,214,0.5) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          transform: "perspective(280px) rotateX(62deg)",
+          maskImage: "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))",
+          WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))",
+        }} />
+      </div>
+
+      <div style={{ position: "relative", maxWidth: 720, margin: "0 auto" }}>
+        <div style={{ display: "inline-block", fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 16, textTransform: "uppercase", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "6px 16px" }}>
+          {t.tag}
+        </div>
+        <h1 style={{ fontSize: "clamp(34px, 7vw, 64px)", fontWeight: 900, lineHeight: 1.05, letterSpacing: 0.5, margin: "0 0 16px", textTransform: "uppercase", background: "linear-gradient(90deg,#2DE3D6,#FFC24B,#FF3D8A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          {t.titleLine1}<br />{t.titleLine2}
+        </h1>
+        <p style={{ fontSize: "clamp(14px, 2vw, 17px)", color: "#E4E6F2", lineHeight: 1.6, maxWidth: 560, margin: "0 auto 24px" }}>
+          {t.subtitle}
+        </p>
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 28, flexWrap: "wrap" }}>
+          {t.pills.map((p) => (
+            <span key={p} style={{ fontSize: 12, fontWeight: 800, color: "#F2F0E9", background: "rgba(15,21,48,0.75)", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "7px 14px" }}>{p}</span>
+          ))}
+        </div>
+        <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+          <button
+            onClick={() => scrollToSectionWithHighlight("funzioni")}
+            style={{ display: "inline-flex", alignItems: "center", background: "#2DE3D6", border: "none", borderRadius: 8, padding: "14px 26px", color: "#0B1026", fontWeight: 900, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", boxShadow: "0 8px 24px rgba(45,227,214,0.35)" }}
+          >
+            {t.btnFeatures}
+          </button>
+          <button
+            onClick={onGoToGame}
+            style={{ background: "transparent", border: "1px solid #FFC24B", borderRadius: 8, padding: "14px 26px", color: "#FFC24B", fontWeight: 800, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
+          >
+            {t.btnGame}
+          </button>
         </div>
       </div>
     </div>
@@ -984,51 +1078,32 @@ function NewsletterSignup({ lang }) {
 
 const PRESENTATION_TEXT = {
   it: {
-    gameLabel: "Il gioco",
-    siteLabel: "Il sito Vice // Radar",
     eyebrow: "Cosa sarà",
     introPre: "Non un sito di notizie generico: uno ",
     introStrong: "strumento pratico",
     introPost: " da tenere aperto mentre giochi. Le sezioni qui sotto si sbloccano con dati reali al lancio, il 19 novembre 2026 — nel frattempo trovi tutto il resto tra le Notizie.",
     comingSoon: "Prossimamente",
+    discoverMore: "Scopri di più →",
   },
   en: {
-    gameLabel: "The game",
-    siteLabel: "The Vice // Radar site",
     eyebrow: "What's coming",
     introPre: "Not just another generic news site: a ",
     introStrong: "practical tool",
     introPost: " to keep open while you play. The sections below unlock with real data at launch, on November 19, 2026 — in the meantime you'll find everything else under News.",
     comingSoon: "Coming soon",
+    discoverMore: "Learn more →",
   },
 };
 
-/* separatore netto tra il blocco "il gioco" e il blocco "il sito", con etichetta al centro */
-function SectionDivider({ label }) {
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 16, maxWidth: 760, margin: "8px auto 36px", padding: "0 16px" }}>
-      <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #1C2340)" }} />
-      <div style={{ fontSize: 11, letterSpacing: 3, color: "#7A8099", fontWeight: 800, textTransform: "uppercase", whiteSpace: "nowrap" }}>{label}</div>
-      <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #1C2340, transparent)" }} />
-    </div>
-  );
-}
-
-function PresentazionePage({ onGoToNews, lang }) {
+/* Home: presentazione del solo sito Vice // Radar (nessun contenuto sul gioco qui,
+   quello vive nella pagina separata "Il Gioco", vedi GiocoPage) */
+function PresentazionePage({ onGoToGame, onGoToFeatures, lang }) {
   const t = PRESENTATION_TEXT[lang];
   return (
     <div>
-      <div style={{ textAlign: "center", padding: "18px 16px 0", fontSize: 11, letterSpacing: 3, color: "#7A8099", fontWeight: 800, textTransform: "uppercase" }}>
-        {t.gameLabel}
-      </div>
+      <SiteHero onGoToGame={onGoToGame} lang={lang} />
 
-      <PresentazioneHero onGoToNews={onGoToNews} lang={lang} />
-
-      <PlatformsPricing onGoToNews={onGoToNews} lang={lang} />
-
-      <SectionDivider label={t.siteLabel} />
-
-      <div id="funzioni" style={{ padding: "0 16px 48px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div id="funzioni" style={{ padding: "48px 16px 48px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
           <h2 style={{ fontSize: "clamp(26px, 4.5vw, 40px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 14px", textTransform: "uppercase", color: "#F2F0E9" }}>
@@ -1041,7 +1116,11 @@ function PresentazionePage({ onGoToNews, lang }) {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
           {UPCOMING_SECTIONS.map((s) => (
-            <div key={s.titolo} style={{ position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${s.colore}`, borderRadius: 12, padding: "20px 18px", overflow: "hidden" }}>
+            <button
+              key={s.titolo}
+              onClick={onGoToFeatures}
+              style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${s.colore}`, borderRadius: 12, padding: "20px 18px", overflow: "hidden", cursor: "pointer", font: "inherit", color: "inherit" }}
+            >
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                 <div style={{ fontSize: 22, width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", background: `${s.colore}22`, flexShrink: 0 }}>
                   {s.icona}
@@ -1049,15 +1128,29 @@ function PresentazionePage({ onGoToNews, lang }) {
                 <div style={{ fontSize: 16, fontWeight: 800 }}>{lang === "en" ? s.titolo_en : s.titolo}</div>
               </div>
               <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.55, marginBottom: 14 }}>{lang === "en" ? s.testo_en : s.testo}</div>
-              <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: s.colore, border: `1px solid ${s.colore}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
-                {t.comingSoon}
+              <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+                <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: s.colore, border: `1px solid ${s.colore}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
+                  {t.comingSoon}
+                </div>
+                <div style={{ fontSize: 12, fontWeight: 800, color: s.colore }}>{t.discoverMore}</div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
       <NewsletterSignup lang={lang} />
+    </div>
+  );
+}
+
+/* pagina separata con le info sul gioco vero e proprio (hero + countdown + prezzo/piattaforme),
+   tenuta distinta dalla home per non mischiare hype sul gioco e presentazione del sito */
+function GiocoPage({ onGoToNews, lang }) {
+  return (
+    <div>
+      <GameHero onGoToNews={onGoToNews} lang={lang} />
+      <PlatformsPricing onGoToNews={onGoToNews} lang={lang} />
     </div>
   );
 }
@@ -1087,16 +1180,88 @@ function SupportoPage({ lang }) {
 /* ---------- Sezioni non ancora attive ("Prossimamente") ---------- */
 const COMING_SOON_COPY = {
   it: {
-    mappa: { titolo: "Mappa Interattiva", testo: "Qui troverai veicoli rari, armi, collezionabili ed easter egg sparsi per Leonida. La sezione si attiva con dati reali al lancio del gioco." },
-    trucchi: { titolo: "Trucchi", testo: "Codici e tecniche per la storia e l'online. La sezione si attiva con dati reali al lancio del gioco." },
-    missioni: { titolo: "Missioni & Segreti", testo: "Consigli per superare i capitoli della storia e i segreti collegati. La sezione si attiva con dati reali al lancio del gioco." },
-    assistente: { titolo: "Assistente IA", testo: "L'assistente che risponde alle tue domande mentre giochi, riservato agli abbonati premium. Si attiva insieme ai dati reali del gioco." },
+    mappa: {
+      titolo: "Mappa Interattiva", testo: "Qui troverai veicoli rari, armi, collezionabili ed easter egg sparsi per Leonida. La sezione si attiva con dati reali al lancio del gioco.",
+      tagline: "Più dettagliata della minimappa in-game, sempre a portata di clic mentre giochi.",
+      bullets: [
+        "Posizione precisa di veicoli rari, armi e collezionabili in ogni angolo di Leonida",
+        "Filtri per categoria e ricerca istantanea, per trovare subito quello che ti serve",
+        "Zoom e trascinamento fluidi: la tieni aperta in un'altra finestra mentre giochi",
+        "Aggiornata con le scoperte della community ad ogni patch del gioco",
+      ],
+    },
+    trucchi: {
+      titolo: "Trucchi", testo: "Codici e tecniche per la storia e l'online. La sezione si attiva con dati reali al lancio del gioco.",
+      tagline: "Tutti i codici in un posto solo, senza popup e pubblicità invadente.",
+      bullets: [
+        "Codici per storia e modalità online, con le piattaforme su cui funziona ciascuno",
+        "Effetti spiegati chiaramente, incluse eventuali controindicazioni (es. achievement disattivati)",
+        "Ricerca rapida per trovare il trucco giusto in pochi secondi",
+        "Lista aggiornata ad ogni patch: niente codici obsoleti",
+      ],
+    },
+    missioni: {
+      titolo: "Missioni & Segreti", testo: "Consigli per superare i capitoli della storia e i segreti collegati. La sezione si attiva con dati reali al lancio del gioco.",
+      tagline: "Non restare bloccato: guide chiare, senza spoiler inutili.",
+      bullets: [
+        "Walkthrough sintetico per ogni capitolo della storia",
+        "Segreti ed easter egg collegati agli oggetti nascosti sulla mappa",
+        "Percorso consigliato per completare la storia al 100%",
+        "Scritte per essere lette al volo, senza girare tra dieci tab del browser",
+      ],
+    },
+    assistente: {
+      titolo: "Assistente IA", testo: "L'assistente che risponde alle tue domande mentre giochi, riservato agli abbonati premium. Si attiva insieme ai dati reali del gioco.",
+      tagline: "Il tuo copilota mentre giochi, riservato agli abbonati Premium.",
+      bullets: [
+        "Chiedi in linguaggio naturale: \"come raggiungo questo punto?\", \"come supero questa missione?\"",
+        "Risposte basate sui dati reali del sito, non generiche come un chatbot qualsiasi",
+        "Suggerimenti su misura in base a dove sei arrivato nella storia",
+        "Sempre a disposizione, anche mentre sei ancora in partita",
+      ],
+    },
   },
   en: {
-    mappa: { titolo: "Interactive Map", testo: "Here you'll find rare vehicles, weapons, collectibles and easter eggs scattered across Leonida. This section unlocks with real data at the game's launch." },
-    trucchi: { titolo: "Cheats", testo: "Codes and techniques for story mode and online. This section unlocks with real data at the game's launch." },
-    missioni: { titolo: "Missions & Secrets", testo: "Tips for beating story chapters and their related secrets. This section unlocks with real data at the game's launch." },
-    assistente: { titolo: "AI Assistant", testo: "The assistant that answers your questions while you play, reserved for premium subscribers. It unlocks together with the game's real data." },
+    mappa: {
+      titolo: "Interactive Map", testo: "Here you'll find rare vehicles, weapons, collectibles and easter eggs scattered across Leonida. This section unlocks with real data at the game's launch.",
+      tagline: "More detailed than the in-game minimap, always one click away while you play.",
+      bullets: [
+        "Precise location of rare vehicles, weapons and collectibles across every corner of Leonida",
+        "Category filters and instant search, to find exactly what you need right away",
+        "Smooth zoom and drag: keep it open in another window while you play",
+        "Updated with community discoveries after every game patch",
+      ],
+    },
+    trucchi: {
+      titolo: "Cheats", testo: "Codes and techniques for story mode and online. This section unlocks with real data at the game's launch.",
+      tagline: "Every code in one place, no popups and no intrusive ads.",
+      bullets: [
+        "Codes for story mode and online, with the platforms each one works on",
+        "Effects explained clearly, including any drawbacks (e.g. disabled achievements)",
+        "Quick search to find the right cheat in seconds",
+        "List updated after every patch: no outdated codes",
+      ],
+    },
+    missioni: {
+      titolo: "Missions & Secrets", testo: "Tips for beating story chapters and their related secrets. This section unlocks with real data at the game's launch.",
+      tagline: "Never get stuck again: clear guides, without unnecessary spoilers.",
+      bullets: [
+        "Concise walkthrough for every chapter of the story",
+        "Secrets and easter eggs tied to items hidden on the map",
+        "Recommended route to complete the story 100%",
+        "Written to be skimmed fast, without ten browser tabs open",
+      ],
+    },
+    assistente: {
+      titolo: "AI Assistant", testo: "The assistant that answers your questions while you play, reserved for premium subscribers. It unlocks together with the game's real data.",
+      tagline: "Your co-pilot while you play, reserved for Premium subscribers.",
+      bullets: [
+        "Ask in plain language: \"how do I get to this point?\", \"how do I beat this mission?\"",
+        "Answers based on the site's real data, not generic like any other chatbot",
+        "Tailored suggestions based on where you are in the story",
+        "Always available, even while you're mid-session",
+      ],
+    },
   },
 };
 
@@ -1184,52 +1349,85 @@ function ComingSoonPage({ view, onGoToNews, onBack, lang }) {
 
 const FEATURES_HUB_TEXT = {
   it: {
-    eyebrow: "In arrivo al lancio",
+    eyebrow: "Perché Vice // Radar",
     title: "Funzionalità",
-    intro: "Queste sezioni si sbloccano con dati reali il 19 novembre 2026. Tocca una card per saperne di più.",
+    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: quattro strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
+    premiumBadge: "✨ Premium",
+    ctaHeading: "Vuoi essere il primo a provarli?",
+    ctaText: "Iscriviti alla newsletter qui sotto: ti avvisiamo il giorno stesso in cui Mappa, Trucchi, Missioni e Assistente IA si sbloccano.",
   },
   en: {
-    eyebrow: "Coming at launch",
+    eyebrow: "Why Vice // Radar",
     title: "Features",
-    intro: "These sections unlock with real data on November 19, 2026. Tap a card to learn more.",
+    intro: "Not another cluttered wiki or an ad-stuffed site: four tools built to stay open while you play, with precise, always up-to-date data. All four unlock on November 19, 2026, launch day.",
+    premiumBadge: "✨ Premium",
+    ctaHeading: "Want to be the first to try them?",
+    ctaText: "Sign up for the newsletter below: we'll notify you the moment Map, Cheats, Missions and AI Assistant unlock.",
   },
 };
 
 /* pagina hub che raggruppa le 4 funzioni ancora bloccate (mappa, trucchi, missioni, assistente):
-   ogni card apre la relativa ComingSoonPage con la spiegazione dedicata */
+   card dettagliate con tagline e benefici concreti (a differenza del riassunto rapido in home),
+   pensate per convincere a tornare/iscriversi prima del lancio. Ogni card apre comunque la
+   relativa ComingSoonPage per chi vuole solo la versione breve. */
 function FeaturesHubPage({ onSelect, lang }) {
   const t = FEATURES_HUB_TEXT[lang];
   return (
-    <div style={{ flex: 1, padding: "40px 16px 48px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
-      <div style={{ textAlign: "center", marginBottom: 32 }}>
+    <div style={{ flex: 1, padding: "40px 16px 48px", maxWidth: 820, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ textAlign: "center", marginBottom: 36 }}>
         <div style={{ fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
         <h2 style={{ fontSize: "clamp(26px, 4.5vw, 40px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 14px", textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
-        <div style={{ fontSize: 14, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 560, margin: "0 auto" }}>{t.intro}</div>
+        <div style={{ fontSize: 14, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>{t.intro}</div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18 }}>
         {LOCKED_VIEWS.map((key) => {
           const theme = LOCK_THEME[key];
           const copy = COMING_SOON_COPY[lang][key];
+          const isPremium = key === "assistente";
           return (
-            <button
+            <div
               key={key}
-              onClick={() => onSelect(key)}
-              style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${theme.accent}`, borderRadius: 12, padding: "20px 18px", overflow: "hidden", cursor: "pointer", font: "inherit", color: "inherit" }}
+              style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${theme.accent}`, borderRadius: 12, padding: "22px 20px", overflow: "hidden", display: "flex", flexDirection: "column" }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                 <div style={{ fontSize: 22, width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", background: `${theme.accent}22`, flexShrink: 0 }}>
                   {theme.heroIcon}
                 </div>
-                <div style={{ fontSize: 16, fontWeight: 800 }}>{copy.titolo}</div>
+                <div>
+                  <div style={{ fontSize: 17, fontWeight: 800 }}>{copy.titolo}</div>
+                </div>
               </div>
-              <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.55, marginBottom: 14 }}>{copy.testo}</div>
-              <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
-                {COMING_SOON_BADGE[lang]}
+              <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: 14 }}>{copy.tagline}</div>
+              <ul style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75, flex: 1 }}>
+                {copy.bullets.map((b) => <li key={b}>{b}</li>)}
+              </ul>
+              <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
+                <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
+                  {COMING_SOON_BADGE[lang]}
+                </div>
+                {isPremium && (
+                  <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#0B1026", background: "#FFC24B", borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
+                    {t.premiumBadge}
+                  </div>
+                )}
               </div>
-            </button>
+              <button
+                onClick={() => onSelect(key)}
+                style={{ alignSelf: "flex-start", background: "none", border: "none", color: theme.accent, fontSize: 12, fontWeight: 800, letterSpacing: 0.3, cursor: "pointer", padding: 0, textTransform: "uppercase" }}
+              >
+                {lang === "en" ? "Details →" : "Dettagli →"}
+              </button>
+            </div>
           );
         })}
       </div>
+
+      <div style={{ textAlign: "center", marginTop: 40, marginBottom: -8 }}>
+        <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 6 }}>{t.ctaHeading}</div>
+        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>{t.ctaText}</div>
+      </div>
+
+      <NewsletterSignup lang={lang} />
     </div>
   );
 }
@@ -1443,7 +1641,8 @@ function MapCanvas({ locations, selected, onSelect, height }) {
 
 /* ---------- App principale ---------- */
 const VIEWS = [
-  { key: "presentazione", label: "Presentazione", label_en: "Overview", shortLabel: "Home", shortLabel_en: "Home" },
+  { key: "presentazione", label: "Home", label_en: "Home", shortLabel: "Home", shortLabel_en: "Home" },
+  { key: "gioco", label: "Il Gioco", label_en: "The Game", shortLabel: "Gioco", shortLabel_en: "Game" },
   { key: "news", label: "Notizie", label_en: "News", shortLabel: "Notizie", shortLabel_en: "News" },
   { key: "funzionalita", label: "Funzionalità", label_en: "Features", shortLabel: "Funzioni", shortLabel_en: "Features" },
   { key: "supporto", label: "Assistenza", label_en: "Support", shortLabel: "Supporto", shortLabel_en: "Support" },
@@ -1486,6 +1685,19 @@ function detectInitialLang() {
   return nav && nav.toLowerCase().startsWith("en") ? "en" : "it";
 }
 
+const FOOTER_TEXT = {
+  it: { tiktok: "Seguici su TikTok" },
+  en: { tiktok: "Follow us on TikTok" },
+};
+
+function TikTokIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M16.6 5.82c-1.02-.9-1.6-2.2-1.6-3.6h-3.05v13.7c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1-2.72-2.72 2.72 2.72 0 0 1 2.72-2.72c.28 0 .55.04.8.12v-3.1a5.8 5.8 0 0 0-.8-.06 5.78 5.78 0 0 0-5.78 5.78A5.78 5.78 0 0 0 9.23 21.6a5.78 5.78 0 0 0 5.78-5.78V9.4a7.5 7.5 0 0 0 4.4 1.42V7.77a4.5 4.5 0 0 1-2.81-1.95Z" />
+    </svg>
+  );
+}
+
 function GTA6Map() {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("tutti");
@@ -1497,6 +1709,12 @@ function GTA6Map() {
   const [highlight, setHighlight] = useState(null); // { kind: "cheat" | "missione", id } per la ricerca
   const [lang, setLang] = useState(detectInitialLang);
   const ht = HEADER_TEXT[lang];
+
+  /* niente scatto secco quando si cambia pagina dal menu: si torna dolcemente in cima */
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [view]);
 
   function changeLang(next) {
     setLang(next);
@@ -1626,10 +1844,15 @@ function GTA6Map() {
         )}
       </div>
 
-      {/* Contenuto */}
+      {/* Contenuto: key={view} fa ripartire la dissolvenza vr-fade-in ad ogni cambio pagina */}
+      <div key={view} className="vr-fade-in" style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
       {view === "presentazione" ? (
         <div style={{ flex: 1 }}>
-          <PresentazionePage onGoToNews={() => setView("news")} lang={lang} />
+          <PresentazionePage onGoToGame={() => setView("gioco")} onGoToFeatures={() => setView("funzionalita")} lang={lang} />
+        </div>
+      ) : view === "gioco" ? (
+        <div style={{ flex: 1 }}>
+          <GiocoPage onGoToNews={() => setView("news")} lang={lang} />
         </div>
       ) : view === "supporto" ? (
         <div style={{ flex: 1 }}>
@@ -1707,6 +1930,20 @@ function GTA6Map() {
           </div>
         </div>
       )}
+      </div>
+
+      {/* Footer: link social, visibile su tutte le pagine */}
+      <div style={{ textAlign: "center", padding: "20px 16px", borderTop: "1px solid #1C2340" }}>
+        <a
+          href="https://www.tiktok.com/@vice.radar.gta.VI"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#7A8099", fontSize: 13, fontWeight: 700, textDecoration: "none" }}
+        >
+          <TikTokIcon size={16} />
+          {FOOTER_TEXT[lang].tiktok}
+        </a>
+      </div>
 
       {/* Bottom nav mobile: stesse voci del nav desktop, generate da VIEWS */}
       {isMobile && (

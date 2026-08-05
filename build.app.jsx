@@ -1422,7 +1422,7 @@ function FeaturesHubPage({ onSelect, lang }) {
         })}
       </div>
 
-      <div style={{ textAlign: "center", marginTop: 40, marginBottom: -8 }}>
+      <div style={{ textAlign: "center", marginTop: 40, marginBottom: 24 }}>
         <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 6 }}>{t.ctaHeading}</div>
         <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>{t.ctaText}</div>
       </div>

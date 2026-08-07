@@ -50,14 +50,10 @@ const DATA = {
     { id: "miss_002", nome: "Il Segreto delle Colline", capitolo: 4, segreti_collegati: ["coll_002", "veh_003"], suggerimenti: "Torna sulle colline in diversi momenti della giornata: alcuni indizi cambiano con la luce." },
   ],
   news: [
+    { id: "news_024", titolo: "Confermato: gameplay reveal in esclusiva Netflix il 27 agosto", tipo: "ufficiale", categoria: "Annunci", data: "2026-08-06", testo: "Rockstar Games ha annunciato ufficialmente \"Grand Theft Auto VI: An Extended Look\": un vero e proprio approfondimento sul gameplay con un terzo trailer, in anteprima assoluta su Netflix giovedì 27 agosto alle 15:00 ora della costa est USA. Lo stesso materiale sarà pubblicato alle 21:00 (sempre costa est) sul canale YouTube ufficiale di Rockstar e sul sito ufficiale di GTA VI. Sarà il primo sguardo approfondito al gameplay reale dopo i due trailer cinematografici già rilasciati." },
     { id: "news_022", titolo: "Verifica dell'età in Australia: Rockstar rischia una multa fino a 49,5 milioni di dollari australiani", tipo: "ufficiale", categoria: "Annunci", data: "2026-08-05", testo: "Le nuove norme australiane sulla sicurezza online (Online Safety Amendment Act) impongono la verifica dell'età per i giochi classificati R18+ come la saga GTA, con multe fino a 49,5 milioni di dollari australiani (circa 35 milioni di dollari USA) in caso di mancato rispetto. La regola riguarda però solo le componenti online: dato che GTA6 uscirà solo in modalità storia senza online al lancio, potrebbe non essere soggetto all'obbligo fin da subito. Rockstar ha già del codice di verifica dormiente nei file di GTA Online, ma non lo ha ancora attivato." },
-    { id: "news_023", titolo: "Manutenzione a sorpresa sui server Rockstar riaccende le speranze sul Trailer 3", tipo: "rumor", categoria: "Annunci", data: "2026-08-04", testo: "Rockstar ha annunciato una manutenzione dei servizi account dalle 4:00 alle 6:00 UTC del 4 agosto, descritta come ordinaria. La community l'ha comunque interpretata come un possibile preludio a un nuovo reveal, complice anche una presunta data \"4 agosto\" individuata su un fermo immagine del primo trailer. Rockstar non ha confermato nulla." },
     { id: "news_020", titolo: "Take-Two dà la caccia ai finti trailer generati con l'IA", tipo: "ufficiale", categoria: "Annunci", data: "2026-08-03", testo: "Take-Two ha iniziato a inviare notifiche DMCA contro canali YouTube (tra cui il noto \"Vice Nation\") che pubblicavano video di Jason e Lucia generati con intelligenza artificiale spacciandoli per leak reali. Il CEO Strauss Zelnick ha ribadito pubblicamente che l'IA generativa non ha alcun ruolo nello sviluppo di GTA6." },
     { id: "news_021", titolo: "Sfatato: GTA6 non uscirà su Nintendo Switch 2", tipo: "ufficiale", categoria: "Uscita", data: "2026-08-03", testo: "Nonostante le speculazioni ricorrenti online, Rockstar e Take-Two non hanno mai annunciato una versione per Nintendo Switch 2: le uniche piattaforme confermate restano PS5 e Xbox Series X|S. Qualsiasi presunto preordine o accesso beta per Switch 2 è falso." },
-    { id: "news_013", titolo: "Un nuovo trailer in arrivo?", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "Secondo l'insider NateTheHate potrebbe arrivare presto un nuovo trailer o un gameplay reveal, forse legato alla presentazione finanziaria di Take-Two del 7 agosto o in vista della Gamescom. Nessuna conferma ufficiale da Rockstar: da prendere con cautela." },
-    { id: "news_014", titolo: "Movimenti sospetti sul sito ufficiale di Rockstar", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "Alcuni utenti segnalano modifiche al backend del sito ufficiale di Rockstar Games, interpretate dalla community come un possibile segnale di un annuncio imminente. Anche in questo caso non c'è alcuna conferma ufficiale." },
-    { id: "news_017", titolo: "L'insider Tom Henderson punta al 6 agosto per il Trailer 3", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "L'insider Tom Henderson prevede che il terzo trailer di GTA6 possa arrivare intorno al 6 agosto, un giorno prima della call di Take-Two. Rockstar non ha confermato alcuna data: resta una previsione basata sugli schemi passati dell'azienda." },
-    { id: "news_018", titolo: "Perché la call di Take-Two del 7 agosto insospettisce i fan", tipo: "rumor", categoria: "Annunci", data: "2026-08-02", testo: "La presentazione dei risultati trimestrali di Take-Two è fissata per venerdì 7 agosto alle 8:00 ora della costa est USA, un orario insolito (di solito l'azienda comunica tra martedì e giovedì, a mercati chiusi). L'ultima volta che Take-Two usò uno slot simile fu per annunciare un rinvio di Red Dead Redemption 2, il che alimenta sia le speranze di novità su GTA6 sia i timori di un possibile ulteriore slittamento." },
     { id: "news_019", titolo: "I mesi gratis di GTA+ non si accumulano", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "Rockstar ha chiarito che annullare e rifare un preordine non fa accumulare più mesi gratuiti di GTA+: il bonus è legato all'account ed è riscattabile una sola volta, indipendentemente da quante volte si cancella e si riordina." },
     { id: "news_001", titolo: "Data di uscita ufficiale: 19 novembre 2026", tipo: "ufficiale", categoria: "Uscita", data: "2026-08-02", testo: "GTA6 uscirà ufficialmente il 19 novembre 2026, dopo due rinvii. Sarà disponibile su PS5 e Xbox Series X|S. Nessuna versione PC è stata annunciata al lancio. Non ci sarà accesso anticipato: tutte le edizioni si sbloccano lo stesso giorno." },
     { id: "news_002", titolo: "Preordini aperti: prezzi ed edizioni", tipo: "ufficiale", categoria: "Prezzo", data: "2026-08-02", testo: "I preordini sono aperti dal 25 giugno 2026. La Standard Edition costa 79,99€ (gioco base), la Ultimate Edition 99,99€ con contenuti esclusivi sbloccati progressivamente durante la storia. È possibile fare l'upgrade da Standard a Ultimate con un supplemento di 20€. Le copie fisiche non includono un disco, solo un codice per il download." },
@@ -93,14 +89,10 @@ const CATEGORY_LABELS = {
 /* Traduzioni inglesi delle notizie, indicizzate per id: DATA.news resta la fonte in italiano,
    qui teniamo solo titolo/testo in inglese per non duplicare l'intero oggetto. */
 const NEWS_EN = {
+  news_024: { titolo: "Confirmed: gameplay reveal exclusively on Netflix on August 27", testo: "Rockstar Games has officially announced \"Grand Theft Auto VI: An Extended Look\": a real deep dive into gameplay with a third trailer, premiering exclusively on Netflix on Thursday, August 27 at 3:00 PM ET. The same footage will go live at 9:00 PM ET on Rockstar's official YouTube channel and the official GTA VI website. It will be the first in-depth look at real gameplay since the two cinematic trailers released so far." },
   news_022: { titolo: "Age verification in Australia: Rockstar risks a fine of up to AU$49.5 million", testo: "Australia's new online safety rules (Online Safety Amendment Act) require age verification for R18+ rated games like the GTA series, with fines of up to AU$49.5 million (about $35 million USD) for non-compliance. The rule only covers online components, though: since GTA6 will launch as a story-only, offline experience with no online mode, it may not be subject to the requirement right away. Rockstar already has dormant verification code inside GTA Online's files but hasn't activated it yet." },
-  news_023: { titolo: "Surprise Rockstar server maintenance reignites Trailer 3 hopes", testo: "Rockstar announced account services maintenance from 4:00 to 6:00 UTC on August 4, described as routine. The community still read it as a possible prelude to a new reveal, fueled further by a supposed \"August 4\" date fans spotted in a freeze-frame of the first trailer. Rockstar has confirmed nothing." },
   news_020: { titolo: "Take-Two cracks down on AI-generated fake trailers", testo: "Take-Two has started issuing DMCA takedown notices against YouTube channels (including the well-known \"Vice Nation\") that posted AI-generated videos of Jason and Lucia passed off as real leaks. CEO Strauss Zelnick publicly reiterated that generative AI plays no role in GTA6's development." },
   news_021: { titolo: "Debunked: GTA6 is not coming to Nintendo Switch 2", testo: "Despite recurring online speculation, Rockstar and Take-Two have never announced a Nintendo Switch 2 version: the only confirmed platforms remain PS5 and Xbox Series X|S. Any supposed pre-order or beta access for Switch 2 is fake." },
-  news_013: { titolo: "A new trailer incoming?", testo: "According to insider NateTheHate, a new trailer or gameplay reveal could arrive soon, possibly tied to Take-Two's August 7 financial presentation or ahead of Gamescom. No official confirmation from Rockstar yet — take it with caution." },
-  news_014: { titolo: "Suspicious activity on Rockstar's official site", testo: "Some users report backend changes on Rockstar Games' official website, interpreted by the community as a possible sign of an imminent announcement. Again, there is no official confirmation." },
-  news_017: { titolo: "Insider Tom Henderson points to August 6 for Trailer 3", testo: "Insider Tom Henderson predicts GTA6's third trailer could arrive around August 6, one day before Take-Two's call. Rockstar has not confirmed any date — this remains a prediction based on the company's past patterns." },
-  news_018: { titolo: "Why Take-Two's August 7 call has fans suspicious", testo: "Take-Two's quarterly earnings presentation is set for Friday, August 7 at 8:00 AM US East Coast time, an unusual slot (the company usually reports Tuesday-Thursday, while markets are closed). The last time Take-Two used a similar slot was to announce a delay for Red Dead Redemption 2, which fuels both hopes for GTA6 news and fears of a further delay." },
   news_019: { titolo: "Free GTA+ months don't stack", testo: "Rockstar has clarified that cancelling and re-placing a pre-order does not stack extra free GTA+ months: the bonus is tied to the account and can only be redeemed once, no matter how many times you cancel and reorder." },
   news_001: { titolo: "Official release date: November 19, 2026", testo: "GTA6 will officially release on November 19, 2026, after two delays. It will be available on PS5 and Xbox Series X|S. No PC version has been announced at launch. There will be no early access: all editions unlock the same day." },
   news_002: { titolo: "Pre-orders open: prices and editions", testo: "Pre-orders have been open since June 25, 2026. The Standard Edition costs $79.99 (base game), the Ultimate Edition $99.99 with exclusive content unlocked progressively through the story. You can upgrade from Standard to Ultimate for a $20 surcharge. Physical copies don't include a disc, only a download code." },
@@ -680,6 +672,7 @@ const UPCOMING_SECTIONS = [
   { icona: "🗺️", colore: "#FF3D8A", titolo: "Mappa Interattiva", titolo_en: "Interactive Map", testo: "Dove trovare veicoli rari, armi, collezionabili ed easter egg in giro per Leonida, più dettagliata della minimappa in-game. Con filtri per categoria e ricerca.", testo_en: "Where to find rare vehicles, weapons, collectibles and easter eggs around Leonida, more detailed than the in-game minimap. With category filters and search." },
   { icona: "🎮", colore: "#FFC24B", titolo: "Trucchi", titolo_en: "Cheats", testo: "Tutti i codici e le tecniche per la modalità storia e online, con le piattaforme su cui funzionano.", testo_en: "All the codes and techniques for story mode and online, with the platforms they work on." },
   { icona: "🕵️", colore: "#2DE3D6", titolo: "Missioni & Segreti", titolo_en: "Missions & Secrets", testo: "Suggerimenti per superare i capitoli della storia e scoprire i segreti collegati agli oggetti nascosti nella mappa.", testo_en: "Tips for beating story chapters and uncovering the secrets linked to items hidden on the map." },
+  { icona: "🐛", colore: "#B24BFF", titolo: "Glitch Online", titolo_en: "Online Glitches", testo: "Duplicazione veicoli, soldi infiniti e altri exploit dell'online scoperti dalla community, spiegati passo passo. Funzione riservata agli abbonati premium.", testo_en: "Vehicle duplication, money glitches and other online exploits found by the community, explained step by step. A feature reserved for premium subscribers." },
   { icona: "🤖", colore: "#FF3D8A", titolo: "Assistente IA", titolo_en: "AI Assistant", testo: "Un assistente che risponde alle tue domande mentre giochi (\"come raggiungo questo punto?\", \"come supero questa missione?\"), basandosi sui dati reali del sito. Sarà una funzione riservata agli abbonati premium.", testo_en: "An assistant that answers your questions while you play (\"how do I get to this spot?\", \"how do I beat this mission?\"), based on the site's real data. It will be a feature reserved for premium subscribers." },
 ];
 
@@ -720,7 +713,7 @@ const SITE_HERO_TEXT = {
     titleLine1: "Vice // Radar",
     titleLine2: "Il tuo compagno per Leonida",
     subtitle: "Mappa dei segreti, trucchi, missioni e un assistente IA: tutto quello che ti serve mentre giochi, in un unico posto. Niente notizie riciclate: solo strumenti pratici, pronti per il lancio.",
-    pills: ["🗺️ Mappa", "🎮 Trucchi", "🕵️ Missioni", "🤖 Assistente IA"],
+    pills: ["🗺️ Mappa", "🎮 Trucchi", "🕵️ Missioni", "🐛 Glitch", "🤖 Assistente IA"],
     btnFeatures: "Scopri le funzionalità",
     btnGame: "Tutto sul gioco →",
   },
@@ -729,7 +722,7 @@ const SITE_HERO_TEXT = {
     titleLine1: "Vice // Radar",
     titleLine2: "Your companion for Leonida",
     subtitle: "A map of secrets, cheats, missions and an AI assistant: everything you need while you play, all in one place. No recycled news — just practical tools, ready for launch.",
-    pills: ["🗺️ Map", "🎮 Cheats", "🕵️ Missions", "🤖 AI Assistant"],
+    pills: ["🗺️ Map", "🎮 Cheats", "🕵️ Missions", "🐛 Glitches", "🤖 AI Assistant"],
     btnFeatures: "Discover the features",
     btnGame: "All about the game →",
   },
@@ -833,9 +826,13 @@ function GameHero({ onGoToNews, lang }) {
   );
 }
 
+/* ordine dei pill nell'hero, allineato a SITE_HERO_TEXT.pills: mappa a ciascuna funzione
+   la view corrispondente per portare l'utente direttamente alla sua pagina "Prossimamente" */
+const HERO_PILL_VIEWS = ["mappa", "trucchi", "missioni", "glitch", "assistente"];
+
 /* hero della home: presenta il sito Vice // Radar, niente countdown né hype sul gioco
    (quello vive nella pagina dedicata "Il Gioco", vedi GameHero) */
-function SiteHero({ onGoToGame, lang }) {
+function SiteHero({ onGoToGame, onSelectFeature, lang }) {
   const t = SITE_HERO_TEXT[lang];
 
   return (
@@ -866,8 +863,14 @@ function SiteHero({ onGoToGame, lang }) {
           {t.subtitle}
         </p>
         <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 28, flexWrap: "wrap" }}>
-          {t.pills.map((p) => (
-            <span key={p} style={{ fontSize: 12, fontWeight: 800, color: "#F2F0E9", background: "rgba(15,21,48,0.75)", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "7px 14px" }}>{p}</span>
+          {t.pills.map((p, i) => (
+            <button
+              key={p}
+              onClick={() => onSelectFeature(HERO_PILL_VIEWS[i])}
+              style={{ font: "inherit", fontSize: 12, fontWeight: 800, color: "#F2F0E9", background: "rgba(15,21,48,0.75)", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "7px 14px", cursor: "pointer" }}
+            >
+              {p}
+            </button>
           ))}
         </div>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
@@ -998,7 +1001,7 @@ const MAILERLITE_FORM_ACTION = "https://assets.mailerlite.com/jsonp/2551771/form
 const NEWSLETTER_TEXT = {
   it: {
     heading: "Non perderti il lancio",
-    subtitle: "Ricevi un avviso quando il sito si sblocca davvero, con Mappa, Trucchi, Missioni e Assistente IA attivi. Niente spam, solo l'essenziale.",
+    subtitle: "Ricevi un avviso quando il sito si sblocca davvero, con Mappa, Trucchi, Missioni, Glitch e Assistente IA attivi. Niente spam, solo l'essenziale.",
     placeholder: "La tua email",
     btnSubmit: "Avvisami →",
     btnSending: "Invio…",
@@ -1007,7 +1010,7 @@ const NEWSLETTER_TEXT = {
   },
   en: {
     heading: "Don't miss the launch",
-    subtitle: "Get notified when the site fully unlocks, with Map, Cheats, Missions and AI Assistant active. No spam, just the essentials.",
+    subtitle: "Get notified when the site fully unlocks, with Map, Cheats, Missions, Glitches and AI Assistant active. No spam, just the essentials.",
     placeholder: "Your email",
     btnSubmit: "Notify me →",
     btnSending: "Sending…",
@@ -1097,11 +1100,11 @@ const PRESENTATION_TEXT = {
 
 /* Home: presentazione del solo sito Vice // Radar (nessun contenuto sul gioco qui,
    quello vive nella pagina separata "Il Gioco", vedi GiocoPage) */
-function PresentazionePage({ onGoToGame, onGoToFeatures, lang }) {
+function PresentazionePage({ onGoToGame, onGoToFeatures, onSelectFeature, lang }) {
   const t = PRESENTATION_TEXT[lang];
   return (
     <div>
-      <SiteHero onGoToGame={onGoToGame} lang={lang} />
+      <SiteHero onGoToGame={onGoToGame} onSelectFeature={onSelectFeature} lang={lang} />
 
       <div id="funzioni" style={{ padding: "48px 16px 48px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -1210,6 +1213,16 @@ const COMING_SOON_COPY = {
         "Scritte per essere lette al volo, senza girare tra dieci tab del browser",
       ],
     },
+    glitch: {
+      titolo: "Glitch Online", testo: "Bug ed exploit della modalità online: duplicazione veicoli, soldi infiniti e altri trucchi scoperti dalla community. Riservato agli abbonati premium, la sezione si attiva con dati reali al lancio del gioco.",
+      tagline: "Gli exploit online più usati, spiegati passo passo, riservati ai Premium.",
+      bullets: [
+        "Duplicazione di veicoli e oggetti rari in modalità online",
+        "Glitch per soldi infiniti e altri exploit economici",
+        "Rischio di ban spiegato per ogni glitch, per giocare con consapevolezza",
+        "Aggiornati appena Rockstar rilascia una patch: sappiamo cosa funziona ancora",
+      ],
+    },
     assistente: {
       titolo: "Assistente IA", testo: "L'assistente che risponde alle tue domande mentre giochi, riservato agli abbonati premium. Si attiva insieme ai dati reali del gioco.",
       tagline: "Il tuo copilota mentre giochi, riservato agli abbonati Premium.",
@@ -1252,6 +1265,16 @@ const COMING_SOON_COPY = {
         "Written to be skimmed fast, without ten browser tabs open",
       ],
     },
+    glitch: {
+      titolo: "Online Glitches", testo: "Bugs and exploits for online mode: vehicle duplication, money glitches and other tricks found by the community. Reserved for premium subscribers, this section unlocks with real data at the game's launch.",
+      tagline: "The most-used online exploits, explained step by step, for Premium members only.",
+      bullets: [
+        "Vehicle and rare item duplication in online mode",
+        "Money glitches and other economic exploits",
+        "Ban risk explained for each glitch, so you can play with awareness",
+        "Updated the moment Rockstar ships a patch: we track what still works",
+      ],
+    },
     assistente: {
       titolo: "AI Assistant", testo: "The assistant that answers your questions while you play, reserved for premium subscribers. It unlocks together with the game's real data.",
       tagline: "Your co-pilot while you play, reserved for Premium subscribers.",
@@ -1274,6 +1297,7 @@ const LOCK_THEME = {
   mappa: { accent: "#2DE3D6", heroIcon: "🗺️", icons: ["📍", "🧭", "📌", "🚗"] },
   trucchi: { accent: "#FFC24B", heroIcon: "🎮", icons: ["⌨️", "🕹️", "💾", "🔢"] },
   missioni: { accent: "#FF3D8A", heroIcon: "🕵️", icons: ["🔍", "🗝️", "👁️", "❓"] },
+  glitch: { accent: "#B24BFF", heroIcon: "🐛", icons: ["💰", "🚗", "🐛", "♾️"] },
   assistente: { accent: "#2DE3D6", heroIcon: "🤖", icons: ["💬", "⚡", "🔮", "📡"] },
 };
 
@@ -1317,9 +1341,9 @@ function ComingSoonPage({ view, onGoToNews, onBack, lang }) {
   const copy = COMING_SOON_COPY[lang][view];
   const theme = LOCK_THEME[view];
   return (
-    <div style={{ position: "relative", flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, overflow: "hidden", background: "linear-gradient(180deg, #0B1026 0%, #10173A 100%)" }}>
+    <div style={{ position: "relative", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 20px 0", background: "linear-gradient(180deg, #0B1026 0%, #10173A 100%)" }}>
       <ComingSoonBackdrop theme={theme} />
-      <div style={{ position: "relative", maxWidth: 440, textAlign: "center", background: "rgba(11,16,38,0.82)", border: `1px solid ${theme.accent}55`, borderRadius: 16, padding: "32px 28px", boxShadow: `0 0 40px ${theme.accent}22` }}>
+      <div style={{ position: "relative", maxWidth: 440, textAlign: "center", background: "rgba(11,16,38,0.82)", border: `1px solid ${theme.accent}55`, borderRadius: 16, padding: "32px 28px", boxShadow: `0 0 40px ${theme.accent}22`, marginBottom: 48 }}>
         <div style={{ fontSize: 40, marginBottom: 14 }}>{theme.heroIcon}</div>
         <div style={{ display: "inline-block", fontSize: 11, letterSpacing: 2, color: theme.accent, fontWeight: 800, marginBottom: 12, textTransform: "uppercase", border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 14px" }}>
           {COMING_SOON_BADGE[lang]}
@@ -1343,6 +1367,9 @@ function ComingSoonPage({ view, onGoToNews, onBack, lang }) {
           </div>
         )}
       </div>
+      <div style={{ position: "relative", width: "100%" }}>
+        <NewsletterSignup lang={lang} />
+      </div>
     </div>
   );
 }
@@ -1351,20 +1378,92 @@ const FEATURES_HUB_TEXT = {
   it: {
     eyebrow: "Perché Vice // Radar",
     title: "Funzionalità",
-    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: quattro strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
+    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: cinque strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
     premiumBadge: "✨ Premium",
     ctaHeading: "Vuoi essere il primo a provarli?",
-    ctaText: "Iscriviti alla newsletter qui sotto: ti avvisiamo il giorno stesso in cui Mappa, Trucchi, Missioni e Assistente IA si sbloccano.",
+    ctaText: "Iscriviti alla newsletter qui sotto: ti avvisiamo il giorno stesso in cui Mappa, Trucchi, Missioni, Glitch e Assistente IA si sbloccano.",
   },
   en: {
     eyebrow: "Why Vice // Radar",
     title: "Features",
-    intro: "Not another cluttered wiki or an ad-stuffed site: four tools built to stay open while you play, with precise, always up-to-date data. All four unlock on November 19, 2026, launch day.",
+    intro: "Not another cluttered wiki or an ad-stuffed site: five tools built to stay open while you play, with precise, always up-to-date data. All five unlock on November 19, 2026, launch day.",
     premiumBadge: "✨ Premium",
     ctaHeading: "Want to be the first to try them?",
-    ctaText: "Sign up for the newsletter below: we'll notify you the moment Map, Cheats, Missions and AI Assistant unlock.",
+    ctaText: "Sign up for the newsletter below: we'll notify you the moment Map, Cheats, Missions, Glitches and AI Assistant unlock.",
   },
 };
+
+const PLANS_TEXT = {
+  it: {
+    eyebrow: "Free vs Premium",
+    title: "Cosa include ogni piano",
+    intro: "Il prezzo non è ancora deciso: lo confermeremo più vicino al lancio. Ecco intanto cosa include ciascun piano.",
+    freeName: "Free",
+    freeDesc: "Gli strumenti base per giocare meglio, sempre gratuiti.",
+    premiumName: "Premium",
+    premiumDesc: "Tutto il Free, più gli strumenti avanzati per l'online.",
+    premiumBadge: "✨ Premium",
+    priceNote: "Prezzo da annunciare",
+  },
+  en: {
+    eyebrow: "Free vs Premium",
+    title: "What each plan includes",
+    intro: "Pricing isn't decided yet — we'll confirm it closer to launch. Here's what to expect from each plan in the meantime.",
+    freeName: "Free",
+    freeDesc: "The essential tools to play better, always free.",
+    premiumName: "Premium",
+    premiumDesc: "Everything in Free, plus the advanced tools for online.",
+    premiumBadge: "✨ Premium",
+    priceNote: "Price to be announced",
+  },
+};
+
+/* tabella di confronto Free/Premium: riusa titoli/tema delle stesse 5 funzioni bloccate
+   (COMING_SOON_COPY / LOCK_THEME / PREMIUM_VIEWS) per non duplicare i testi altrove */
+function PlansComparison({ lang }) {
+  const t = PLANS_TEXT[lang];
+  const freeKeys = LOCKED_VIEWS.filter((k) => !PREMIUM_VIEWS.includes(k));
+
+  function renderFeature(key) {
+    const isPremiumOnly = PREMIUM_VIEWS.includes(key);
+    return (
+      <li key={key} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#E4E6F2" }}>
+        <span style={{ color: isPremiumOnly ? "#FFC24B" : "#2DE3D6", fontWeight: 900 }}>✓</span>
+        <span>{LOCK_THEME[key].heroIcon} {COMING_SOON_COPY[lang][key].titolo}</span>
+      </li>
+    );
+  }
+
+  return (
+    <div style={{ padding: "8px 16px 40px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ textAlign: "center", marginBottom: 28 }}>
+        <div style={{ fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
+        <h2 style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 12px", textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
+        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>{t.intro}</div>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18 }}>
+        <div style={{ background: "#0F1530", border: "1px solid #1C2340", borderRadius: 12, padding: "24px 22px" }}>
+          <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 4 }}>{t.freeName}</div>
+          <div style={{ fontSize: 13, color: "#C7CBDA", marginBottom: 18 }}>{t.freeDesc}</div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+            {freeKeys.map(renderFeature)}
+          </ul>
+        </div>
+        <div style={{ position: "relative", background: "linear-gradient(135deg, #1A1440, #0F1530)", border: "1px solid rgba(255,194,75,0.45)", borderRadius: 12, padding: "24px 22px" }}>
+          <div style={{ position: "absolute", top: 14, right: 14, fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#0B1026", background: "#FFC24B", borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
+            {t.premiumBadge}
+          </div>
+          <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 4 }}>{t.premiumName}</div>
+          <div style={{ fontSize: 13, color: "#C7CBDA", marginBottom: 18 }}>{t.premiumDesc}</div>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+            {LOCKED_VIEWS.map(renderFeature)}
+          </ul>
+        </div>
+      </div>
+      <div style={{ textAlign: "center", fontSize: 11, color: "#7A8099", marginTop: 18, textTransform: "uppercase", letterSpacing: 1 }}>{t.priceNote}</div>
+    </div>
+  );
+}
 
 /* pagina hub che raggruppa le 4 funzioni ancora bloccate (mappa, trucchi, missioni, assistente):
    card dettagliate con tagline e benefici concreti (a differenza del riassunto rapido in home),
@@ -1383,7 +1482,7 @@ function FeaturesHubPage({ onSelect, lang }) {
         {LOCKED_VIEWS.map((key) => {
           const theme = LOCK_THEME[key];
           const copy = COMING_SOON_COPY[lang][key];
-          const isPremium = key === "assistente";
+          const isPremium = PREMIUM_VIEWS.includes(key);
           return (
             <div
               key={key}
@@ -1422,7 +1521,11 @@ function FeaturesHubPage({ onSelect, lang }) {
         })}
       </div>
 
-      <div style={{ textAlign: "center", marginTop: 40, marginBottom: 24 }}>
+      <div style={{ marginTop: 48 }}>
+        <PlansComparison lang={lang} />
+      </div>
+
+      <div style={{ textAlign: "center", marginTop: 8, marginBottom: 24 }}>
         <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 6 }}>{t.ctaHeading}</div>
         <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>{t.ctaText}</div>
       </div>
@@ -1653,7 +1756,8 @@ const VIEWS = [
 
 /* sezioni senza dati reali ancora: restano nel menu ma mostrano "Prossimamente".
    Quando avremo contenuti veri per una sezione, basta toglierla da questo elenco. */
-const LOCKED_VIEWS = ["mappa", "trucchi", "missioni", "assistente"];
+const LOCKED_VIEWS = ["mappa", "trucchi", "missioni", "glitch", "assistente"];
+const PREMIUM_VIEWS = ["glitch", "assistente"];
 
 const HEADER_TEXT = {
   it: {
@@ -1848,7 +1952,7 @@ export default function GTA6Map() {
       <div key={view} className="vr-fade-in" style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
       {view === "presentazione" ? (
         <div style={{ flex: 1 }}>
-          <PresentazionePage onGoToGame={() => setView("gioco")} onGoToFeatures={() => setView("funzionalita")} lang={lang} />
+          <PresentazionePage onGoToGame={() => setView("gioco")} onGoToFeatures={() => setView("funzionalita")} onSelectFeature={(key) => setView(key)} lang={lang} />
         </div>
       ) : view === "gioco" ? (
         <div style={{ flex: 1 }}>

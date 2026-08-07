@@ -761,6 +761,7 @@ const SITE_HERO_TEXT = {
     titleLine1: "Vice // Radar",
     titleLine2: "Il tuo compagno per Leonida",
     subtitle: "Mappa dei segreti, trucchi, missioni e un assistente IA: tutto quello che ti serve mentre giochi, in un unico posto. Niente notizie riciclate: solo strumenti pratici, pronti per il lancio.",
+    liveBadge: "Notizie già live — leggi ora",
     pills: ["🗺️ Mappa", "🎮 Trucchi", "🕵️ Missioni", "🐛 Glitch", "🤖 Assistente IA"],
     btnFeatures: "Scopri le funzionalità",
     btnGame: "Tutto sul gioco →",
@@ -770,6 +771,7 @@ const SITE_HERO_TEXT = {
     titleLine1: "Vice // Radar",
     titleLine2: "Your companion for Leonida",
     subtitle: "A map of secrets, cheats, missions and an AI assistant: everything you need while you play, all in one place. No recycled news — just practical tools, ready for launch.",
+    liveBadge: "News already live — read now",
     pills: ["🗺️ Map", "🎮 Cheats", "🕵️ Missions", "🐛 Glitches", "🤖 AI Assistant"],
     btnFeatures: "Discover the features",
     btnGame: "All about the game →",
@@ -880,7 +882,7 @@ const HERO_PILL_VIEWS = ["mappa", "trucchi", "missioni", "glitch", "assistente"]
 
 /* hero della home: presenta il sito Vice // Radar, niente countdown né hype sul gioco
    (quello vive nella pagina dedicata "Il Gioco", vedi GameHero) */
-function SiteHero({ onGoToGame, onSelectFeature, lang }) {
+function SiteHero({ onGoToGame, onGoToNews, onSelectFeature, lang }) {
   const t = SITE_HERO_TEXT[lang];
 
   return (
@@ -907,9 +909,16 @@ function SiteHero({ onGoToGame, onSelectFeature, lang }) {
         <h1 style={{ fontSize: "clamp(34px, 7vw, 64px)", fontWeight: 900, lineHeight: 1.05, letterSpacing: 0.5, margin: "0 0 16px", textTransform: "uppercase", background: "linear-gradient(90deg,#2DE3D6,#FFC24B,#FF3D8A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           {t.titleLine1}<br />{t.titleLine2}
         </h1>
-        <p style={{ fontSize: "clamp(14px, 2vw, 17px)", color: "#E4E6F2", lineHeight: 1.6, maxWidth: 560, margin: "0 auto 24px" }}>
+        <p style={{ fontSize: "clamp(14px, 2vw, 17px)", color: "#E4E6F2", lineHeight: 1.6, maxWidth: 560, margin: "0 auto 20px" }}>
           {t.subtitle}
         </p>
+        <button
+          onClick={onGoToNews}
+          style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 24, background: "rgba(45,227,214,0.08)", border: "1px solid rgba(45,227,214,0.5)", borderRadius: 20, padding: "8px 16px", color: "#2DE3D6", fontSize: 12, fontWeight: 800, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", font: "inherit" }}
+        >
+          <span className="vr-live-dot" />
+          {t.liveBadge}
+        </button>
         <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 28, flexWrap: "wrap" }}>
           {t.pills.map((p, i) => (
             <button
@@ -924,7 +933,8 @@ function SiteHero({ onGoToGame, onSelectFeature, lang }) {
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <button
             onClick={() => scrollToSectionWithHighlight("funzioni")}
-            style={{ display: "inline-flex", alignItems: "center", background: "#2DE3D6", border: "none", borderRadius: 8, padding: "14px 26px", color: "#0B1026", fontWeight: 900, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", boxShadow: "0 8px 24px rgba(45,227,214,0.35)" }}
+            className="vr-cta-pulse"
+            style={{ display: "inline-flex", alignItems: "center", background: "#2DE3D6", border: "none", borderRadius: 8, padding: "14px 26px", color: "#0B1026", fontWeight: 900, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
           >
             {t.btnFeatures}
           </button>
@@ -1092,7 +1102,7 @@ function NewsletterSignup({ lang }) {
   }
 
   return (
-    <div style={{ margin: "0 16px 56px", maxWidth: 620, marginLeft: "auto", marginRight: "auto", position: "relative", background: "linear-gradient(135deg, #131A3A, #0F1530)", border: "1px solid #1C2340", borderRadius: 16, padding: "36px 28px", textAlign: "center", overflow: "hidden" }}>
+    <div id="newsletter" style={{ margin: "0 16px 56px", maxWidth: 620, marginLeft: "auto", marginRight: "auto", position: "relative", background: "linear-gradient(135deg, #131A3A, #0F1530)", border: "1px solid #1C2340", borderRadius: 16, padding: "36px 28px", textAlign: "center", overflow: "hidden" }}>
       <div style={{ position: "absolute", top: "-40%", left: "50%", transform: "translateX(-50%)", width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,227,214,0.25) 0%, transparent 70%)", pointerEvents: "none" }} />
       <div style={{ position: "relative" }}>
         <div style={{ fontSize: 28, marginBottom: 10 }}>📡</div>
@@ -1127,6 +1137,58 @@ function NewsletterSignup({ lang }) {
   );
 }
 
+const HOW_IT_WORKS_TEXT = {
+  it: {
+    eyebrow: "Come funziona",
+    title: "Tre passi, zero confusione",
+    steps: [
+      { num: "01", icon: "📰", title: "Segui le notizie vere", text: "Aggiornamento quotidiano su tutto quello che Rockstar e Take-Two confermano davvero — niente rumor spacciati per certezze.", cta: "Leggi le notizie →" },
+      { num: "02", icon: "📡", title: "Iscriviti alla newsletter", text: "Una sola email, il giorno in cui Mappa, Trucchi, Missioni, Glitch e Assistente IA diventano reali.", cta: "Iscriviti ora →" },
+      { num: "03", icon: "🔓", title: "Sblocca tutti gli strumenti", text: "Il 19 novembre 2026, giorno del lancio, il sito si trasforma nel tuo compagno completo per Leonida.", cta: "Vedi le funzionalità →" },
+    ],
+  },
+  en: {
+    eyebrow: "How it works",
+    title: "Three steps, zero confusion",
+    steps: [
+      { num: "01", icon: "📰", title: "Follow the real news", text: "Daily updates on everything Rockstar and Take-Two actually confirm — no rumors passed off as facts.", cta: "Read the news →" },
+      { num: "02", icon: "📡", title: "Sign up for the newsletter", text: "One single email, the day Map, Cheats, Missions, Glitches and AI Assistant go live for real.", cta: "Sign up now →" },
+      { num: "03", icon: "🔓", title: "Unlock every tool", text: "On November 19, 2026, launch day, the site turns into your full companion for Leonida.", cta: "See the features →" },
+    ],
+  },
+};
+
+/* sezione "come funziona": spiega il modello pre-lancio in 3 passi cliccabili, ognuno porta
+   all'azione corrispondente (leggere notizie, iscriversi, vedere le funzionalità) invece di
+   restare puramente descrittiva */
+function HowItWorks({ onGoToNews, onGoToFeatures, lang }) {
+  const t = HOW_IT_WORKS_TEXT[lang];
+  const actions = [onGoToNews, () => scrollToSectionWithHighlight("newsletter"), onGoToFeatures];
+  return (
+    <div style={{ padding: "8px 16px 40px", maxWidth: 900, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+      <div style={{ textAlign: "center", marginBottom: 32 }}>
+        <div style={{ fontSize: 12, letterSpacing: 3, color: "#FFC24B", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
+        <h2 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, letterSpacing: 0.5, margin: 0, textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
+        {t.steps.map((s, i) => (
+          <button
+            key={s.num}
+            onClick={actions[i]}
+            style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderRadius: 12, padding: "22px 20px", cursor: "pointer", font: "inherit", color: "inherit", overflow: "hidden" }}
+          >
+            <div style={{ position: "absolute", top: 10, right: 16, fontSize: 42, fontWeight: 900, color: "rgba(255,255,255,0.05)" }}>{s.num}</div>
+            <div style={{ fontSize: 26, marginBottom: 10 }}>{s.icon}</div>
+            <div style={{ fontSize: 15, fontWeight: 800, marginBottom: 8 }}>{s.title}</div>
+            <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.55, marginBottom: 14 }}>{s.text}</div>
+            <div style={{ fontSize: 12, fontWeight: 800, color: "#2DE3D6" }}>{s.cta}</div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const PRESENTATION_TEXT = {
   it: {
     eyebrow: "Cosa sarà",
@@ -1148,11 +1210,13 @@ const PRESENTATION_TEXT = {
 
 /* Home: presentazione del solo sito Vice // Radar (nessun contenuto sul gioco qui,
    quello vive nella pagina separata "Il Gioco", vedi GiocoPage) */
-function PresentazionePage({ onGoToGame, onGoToFeatures, onSelectFeature, lang }) {
+function PresentazionePage({ onGoToGame, onGoToFeatures, onGoToNews, onSelectFeature, lang }) {
   const t = PRESENTATION_TEXT[lang];
   return (
     <div>
-      <SiteHero onGoToGame={onGoToGame} onSelectFeature={onSelectFeature} lang={lang} />
+      <SiteHero onGoToGame={onGoToGame} onGoToNews={onGoToNews} onSelectFeature={onSelectFeature} lang={lang} />
+
+      <HowItWorks onGoToNews={onGoToNews} onGoToFeatures={onGoToFeatures} lang={lang} />
 
       <div id="funzioni" style={{ padding: "48px 16px 48px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -2037,7 +2101,7 @@ function GTA6Map() {
       <div key={view} className="vr-fade-in" style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
       {view === "presentazione" ? (
         <div style={{ flex: 1 }}>
-          <PresentazionePage onGoToGame={() => setView("gioco")} onGoToFeatures={() => setView("funzionalita")} onSelectFeature={(key) => setView(key)} lang={lang} />
+          <PresentazionePage onGoToGame={() => setView("gioco")} onGoToFeatures={() => setView("funzionalita")} onGoToNews={() => setView("news")} onSelectFeature={(key) => setView(key)} lang={lang} />
         </div>
       ) : view === "gioco" ? (
         <div style={{ flex: 1 }}>

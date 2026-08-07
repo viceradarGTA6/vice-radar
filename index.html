@@ -21,6 +21,10 @@ html{scroll-behavior:smooth;}
 .vr-fade-in{animation:vrFadeIn .45s ease-out 1;}
 @keyframes vrHighlightPulse{0%{box-shadow:0 0 0 0 rgba(45,227,214,0.55);}60%{box-shadow:0 0 0 18px rgba(45,227,214,0);}100%{box-shadow:0 0 0 0 rgba(45,227,214,0);}}
 .vr-highlight{animation:vrHighlightPulse 1.4s ease-out 1;border-radius:12px;}
+@keyframes vrDotPulse{0%{box-shadow:0 0 0 0 rgba(45,227,214,0.6);}70%{box-shadow:0 0 0 8px rgba(45,227,214,0);}100%{box-shadow:0 0 0 0 rgba(45,227,214,0);}}
+.vr-live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2DE3D6;animation:vrDotPulse 1.8s ease-out infinite;}
+@keyframes vrCtaPulse{0%{box-shadow:0 8px 24px rgba(45,227,214,0.35),0 0 0 0 rgba(45,227,214,0.5);}70%{box-shadow:0 8px 24px rgba(45,227,214,0.35),0 0 0 10px rgba(45,227,214,0);}100%{box-shadow:0 8px 24px rgba(45,227,214,0.35),0 0 0 0 rgba(45,227,214,0);}}
+.vr-cta-pulse{animation:vrCtaPulse 2.2s ease-in-out infinite;}
 </style>
 </head>
 <body>
@@ -29,7 +33,7 @@ html{scroll-behavior:smooth;}
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script>
-fetch("build.app.jsx?v=30")
+fetch("build.app.jsx?v=31")
   .then((r) => r.text())
   .then((src) => {
     const code = Babel.transform(src, { presets: [["react", { runtime: "classic" }]] }).code;

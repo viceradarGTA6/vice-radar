@@ -521,6 +521,8 @@ const NEWS_PAGE_TEXT = {
     badgeOfficial: "Ufficiale",
     badgeRumor: "Rumor",
     askAI: "Chiedi all'assistente →",
+    share: "Condividi",
+    copied: "Copiato!",
   },
   en: {
     disclaimer: "Updated as new official information or rumors about the game come out. \"Rumor\" news items are not confirmed by Rockstar.",
@@ -531,8 +533,34 @@ const NEWS_PAGE_TEXT = {
     badgeOfficial: "Official",
     badgeRumor: "Rumor",
     askAI: "Ask the assistant →",
+    share: "Share",
+    copied: "Copied!",
   },
 };
+
+const SHARE_URL = "https://viceradar.netlify.app";
+
+function shareNews(news, lang, onCopied) {
+  const titolo = lang === "en" ? (NEWS_EN[news.id]?.titolo || news.titolo) : news.titolo;
+  const shareData = { title: titolo, text: `${titolo} — Vice // Radar`, url: SHARE_URL };
+  if (typeof navigator !== "undefined" && navigator.share) {
+    navigator.share(shareData).catch(() => {});
+  } else if (typeof navigator !== "undefined" && navigator.clipboard) {
+    navigator.clipboard.writeText(`${shareData.text} ${SHARE_URL}`).then(onCopied).catch(() => {});
+  }
+}
+
+function ShareIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <line x1="8.6" y1="10.5" x2="15.4" y2="6.5" />
+      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
+    </svg>
+  );
+}
 
 function formatNewsDate(iso) {
   const [y, m, d] = iso.split("-");
@@ -541,6 +569,7 @@ function formatNewsDate(iso) {
 
 function NewsCard({ news, isHighlighted, registerRef, onAskAI, lang }) {
   const isRumor = news.tipo === "rumor";
+  const [copied, setCopied] = useState(false);
   const t = NEWS_PAGE_TEXT[lang];
   const titolo = lang === "en" ? (NEWS_EN[news.id]?.titolo || news.titolo) : news.titolo;
   const testo = lang === "en" ? (NEWS_EN[news.id]?.testo || news.testo) : news.testo;
@@ -569,12 +598,21 @@ function NewsCard({ news, isHighlighted, registerRef, onAskAI, lang }) {
         {categoria.toUpperCase()} · {formatNewsDate(news.data)}
       </div>
       <div style={{ fontSize: 13, color: "#C7CBDA", marginTop: 10, lineHeight: 1.6 }}>{testo}</div>
-      <button
-        onClick={() => onAskAI(`Parlami di questa notizia: ${news.titolo}`)}
-        style={{ marginTop: 12, background: "transparent", border: "1px solid #FF3D8A", color: "#FF3D8A", borderRadius: 6, padding: "9px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
-      >
-        {t.askAI}
-      </button>
+      <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
+        <button
+          onClick={() => onAskAI(`Parlami di questa notizia: ${news.titolo}`)}
+          style={{ background: "transparent", border: "1px solid #FF3D8A", color: "#FF3D8A", borderRadius: 6, padding: "9px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+        >
+          {t.askAI}
+        </button>
+        <button
+          onClick={() => shareNews(news, lang, () => { setCopied(true); setTimeout(() => setCopied(false), 2000); })}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "transparent", border: "1px solid #2DE3D6", color: "#2DE3D6", borderRadius: 6, padding: "9px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+        >
+          <ShareIcon size={13} />
+          {copied ? t.copied : t.share}
+        </button>
+      </div>
     </div>
   );
 }
@@ -630,15 +668,23 @@ function NewsPage({ highlight, onClearHighlight, onAskAI, lang }) {
           {officialNews.length === 0 ? (
             <div style={{ color: "#7A8099", fontSize: 13, marginBottom: 20 }}>{t.noOfficial}</div>
           ) : (
-            officialNews.map((n) => (
-              <NewsCard
-                key={n.id}
-                news={n}
-                isHighlighted={highlight?.kind === "news" && highlight.id === n.id}
-                registerRef={(el) => (newsRefs.current[n.id] = el)}
-                onAskAI={onAskAI}
-                lang={lang}
-              />
+            officialNews.map((n, i) => (
+              <React.Fragment key={n.id}>
+                <NewsCard
+                  news={n}
+                  isHighlighted={highlight?.kind === "news" && highlight.id === n.id}
+                  registerRef={(el) => (newsRefs.current[n.id] = el)}
+                  onAskAI={onAskAI}
+                  lang={lang}
+                />
+                {/* newsletter inserita dopo la 3a notizia: l'utente ha già visto contenuto vero
+                   prima della richiesta di iscrizione, invece di trovarsela subito in cima */}
+                {i === 2 && (
+                  <div style={{ marginBottom: 20 }}>
+                    <NewsletterSignup lang={lang} />
+                  </div>
+                )}
+              </React.Fragment>
             ))
           )}
         </>
@@ -1156,6 +1202,7 @@ function GiocoPage({ onGoToNews, lang }) {
     <div>
       <GameHero onGoToNews={onGoToNews} lang={lang} />
       <PlatformsPricing onGoToNews={onGoToNews} lang={lang} />
+      <NewsletterSignup lang={lang} />
     </div>
   );
 }
@@ -1812,6 +1859,33 @@ function YouTubeIcon({ size = 16 }) {
   );
 }
 
+const STICKY_COUNTDOWN_TEXT = {
+  it: (days) => `🔥 Mancano ${days} giorni al lancio di GTA6`,
+  en: (days) => `🔥 ${days} days left until GTA6 launches`,
+};
+const STICKY_COUNTDOWN_CTA = { it: "Scopri di più →", en: "Learn more →" };
+
+/* barra countdown compatta, visibile in cima a tutte le pagine tranne "Il Gioco"
+   (che mostra già il countdown grande): rinforza l'urgenza mentre l'utente legge
+   notizie o naviga le altre sezioni, non solo sulla pagina dedicata al gioco */
+function StickyCountdownBar({ onGoToGame, lang }) {
+  const { days } = useCountdown(LAUNCH_DATE);
+  return (
+    <button
+      onClick={onGoToGame}
+      style={{
+        display: "flex", alignItems: "center", justifyContent: "center", gap: 10, width: "100%",
+        background: "linear-gradient(90deg, #FF3D8A, #FFC24B)", border: "none", color: "#0B1026",
+        fontWeight: 800, fontSize: 12, letterSpacing: 0.3, padding: "8px 12px", cursor: "pointer",
+        position: "sticky", top: 0, zIndex: 40,
+      }}
+    >
+      {STICKY_COUNTDOWN_TEXT[lang](days)}
+      <span style={{ textDecoration: "underline" }}>{STICKY_COUNTDOWN_CTA[lang]}</span>
+    </button>
+  );
+}
+
 export default function GTA6Map() {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("tutti");
@@ -1866,6 +1940,7 @@ export default function GTA6Map() {
 
   return (
     <div style={{ minHeight: "100vh", width: "100%", background: "#0B1026", color: "#F2F0E9", fontFamily: "'Arial Narrow', 'Helvetica Neue', Arial, sans-serif", display: "flex", flexDirection: "column", paddingBottom: isMobile ? 62 : 0 }}>
+      {view !== "gioco" && <StickyCountdownBar onGoToGame={() => setView("gioco")} lang={lang} />}
       {/* Header */}
       <div style={{ padding: isMobile ? "14px 14px 10px" : "18px 24px", borderBottom: "2px solid #2DE3D6" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 10, marginBottom: 10 }}>

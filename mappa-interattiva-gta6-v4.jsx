@@ -1792,14 +1792,22 @@ function detectInitialLang() {
 }
 
 const FOOTER_TEXT = {
-  it: { tiktok: "Seguici su TikTok" },
-  en: { tiktok: "Follow us on TikTok" },
+  it: { tiktok: "Seguici su TikTok", youtube: "Iscriviti su YouTube" },
+  en: { tiktok: "Follow us on TikTok", youtube: "Subscribe on YouTube" },
 };
 
 function TikTokIcon({ size = 16 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M16.6 5.82c-1.02-.9-1.6-2.2-1.6-3.6h-3.05v13.7c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1-2.72-2.72 2.72 2.72 0 0 1 2.72-2.72c.28 0 .55.04.8.12v-3.1a5.8 5.8 0 0 0-.8-.06 5.78 5.78 0 0 0-5.78 5.78A5.78 5.78 0 0 0 9.23 21.6a5.78 5.78 0 0 0 5.78-5.78V9.4a7.5 7.5 0 0 0 4.4 1.42V7.77a4.5 4.5 0 0 1-2.81-1.95Z" />
+    </svg>
+  );
+}
+
+function YouTubeIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.95 1.97C5.12 19.5 12 19.5 12 19.5s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33ZM9.75 15.02V8.48l5.75 3.27-5.75 3.27Z" />
     </svg>
   );
 }
@@ -2039,7 +2047,7 @@ export default function GTA6Map() {
       </div>
 
       {/* Footer: link social, visibile su tutte le pagine */}
-      <div style={{ textAlign: "center", padding: "20px 16px", borderTop: "1px solid #1C2340" }}>
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 24, padding: "20px 16px", borderTop: "1px solid #1C2340" }}>
         <a
           href="https://www.tiktok.com/@vice.radar.gta.VI"
           target="_blank"
@@ -2048,6 +2056,15 @@ export default function GTA6Map() {
         >
           <TikTokIcon size={16} />
           {FOOTER_TEXT[lang].tiktok}
+        </a>
+        <a
+          href="https://www.youtube.com/@ViceRadar-GTAVI"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "#7A8099", fontSize: 13, fontWeight: 700, textDecoration: "none" }}
+        >
+          <YouTubeIcon size={16} />
+          {FOOTER_TEXT[lang].youtube}
         </a>
       </div>
 

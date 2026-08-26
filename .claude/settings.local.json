@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "WebSearch",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://viceradar.netlify.app/favicon.ico)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://viceradar.netlify.app/robots.txt)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://viceradar.netlify.app/sitemap.xml)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Skill(schedule)",
+      "Skill(schedule:*)",
+      "Bash(cp build.app.jsx dist/build.app.jsx)",
+      "Bash(cp index.html dist/index.html)",
+      "Bash(npx --version)",
+      "WebFetch(domain:screenrant.com)",
+      "WebFetch(domain:variety.com)",
+      "WebFetch(domain:9to5toys.com)",
+      "mcp__claude-in-chrome__tabs_create_mcp",
+      "Bash(echo \"exit:$?\")",
+      "WebFetch(domain:www.digitaltrends.com)",
+      "WebFetch(domain:www.gtaboom.com)",
+      "WebFetch(domain:rockstarintel.com)",
+      "Bash(sort -t: -k2)",
+      "Bash(uniq -c -f0)",
+      "Bash(awk -F: '{print $2}')",
+      "WebFetch(domain:www.notebookcheck.net)",
+      "Bash(git -C \"C:\\\\Users\\\\rober\\\\Desktop\\\\cloude code\" status --short)",
+      "Bash(git -C \"C:\\\\Users\\\\rober\\\\Desktop\\\\cloude code\" diff --stat)",
+      "WebFetch(domain:consolepulse.com)",
+      "Bash(sed -e '1s#.*#const { useState, useMemo, useRef, useEffect, useLayoutEffect } = React;#' -e 's/^export default function GTA6Map\\(\\) {$/function GTA6Map\\(\\) {/' mappa-interattiva-gta6-v4.jsx)",
+      "Bash(echo 'window.GTA6Map = GTA6Map;')",
+      "Bash(awk '$1>1')"
+    ]
+  }
+}

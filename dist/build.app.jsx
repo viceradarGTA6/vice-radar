@@ -1207,7 +1207,7 @@ const HOW_IT_WORKS_TEXT = {
     steps: [
       { num: "01", icon: "📰", title: "Segui le notizie vere", text: "Aggiornamento quotidiano su tutto quello che Rockstar e Take-Two confermano davvero — niente rumor spacciati per certezze.", cta: "Leggi le notizie →" },
       { num: "02", icon: "📡", title: "Iscriviti alla newsletter", text: "Una sola email, il giorno in cui Mappa, Trucchi, Missioni, Glitch e Assistente IA diventano reali.", cta: "Iscriviti ora →" },
-      { num: "03", icon: "🔓", title: "Sblocca tutti gli strumenti", text: "Il 19 novembre 2026, giorno del lancio, il sito si trasforma nel tuo compagno completo per Leonida.", cta: "Vedi le funzionalità →" },
+      { num: "03", icon: "🚀", title: "Il sito diventa il tuo copilota per Leonida", text: "Il 19 novembre 2026 tutto quello che hai visto finora prende vita insieme: mappa dei segreti, trucchi, missioni e assistente IA, aggiornati in tempo reale. Non un semplice sblocco: è il vero motivo per cui esiste Vice // Radar.", cta: "Scopri cosa ti aspetta →" },
     ],
   },
   en: {
@@ -1216,39 +1216,92 @@ const HOW_IT_WORKS_TEXT = {
     steps: [
       { num: "01", icon: "📰", title: "Follow the real news", text: "Daily updates on everything Rockstar and Take-Two actually confirm — no rumors passed off as facts.", cta: "Read the news →" },
       { num: "02", icon: "📡", title: "Sign up for the newsletter", text: "One single email, the day Map, Cheats, Missions, Glitches and AI Assistant go live for real.", cta: "Sign up now →" },
-      { num: "03", icon: "🔓", title: "Unlock every tool", text: "On November 19, 2026, launch day, the site turns into your full companion for Leonida.", cta: "See the features →" },
+      { num: "03", icon: "🚀", title: "The site becomes your Leonida copilot", text: "On November 19, 2026, everything you've seen so far comes alive together: the secrets map, cheats, missions and AI assistant, updated in real time. Not just an unlock — it's the entire reason Vice // Radar exists.", cta: "See what's coming →" },
     ],
   },
 };
 
-/* sezione "come funziona": spiega il modello pre-lancio in 3 passi cliccabili, ognuno porta
-   all'azione corrispondente (leggere notizie, iscriversi, vedere le funzionalità) invece di
-   restare puramente descrittiva */
+/* timeline che si rivela allo scroll: ogni passo entra in vista con una piccola dissolvenza+risalita,
+   sfalsata per indice, invece di comparire tutto insieme al caricamento della pagina */
+function useRevealOnScroll() {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setInView(true); return; }
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return [ref, inView];
+}
+
+/* sezione "come funziona": spiega il modello pre-lancio come una piccola timeline 1-2-3 cliccabile,
+   ognuno porta all'azione corrispondente. Il passo 3 e' il vero valore del sito (non "iscriviti", ma
+   cosa diventa il sito al lancio) quindi ha un trattamento visivo piu' grande e acceso degli altri due */
 function HowItWorks({ onGoToNews, onGoToFeatures, lang }) {
   const t = HOW_IT_WORKS_TEXT[lang];
   const actions = [onGoToNews, () => scrollToSectionWithHighlight("newsletter"), onGoToFeatures];
+  const dotColors = ["#2DE3D6", "#FFC24B", "#FF3D8A"];
   return (
     <div style={{ padding: "8px 16px 40px", maxWidth: 900, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
-      <div style={{ textAlign: "center", marginBottom: 32 }}>
+      <div style={{ textAlign: "center", marginBottom: 40 }}>
         <div style={{ fontSize: 12, letterSpacing: 3, color: "#FFC24B", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
         <h2 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, letterSpacing: 0.5, margin: 0, textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
-        {t.steps.map((s, i) => (
-          <button
-            key={s.num}
-            onClick={actions[i]}
-            style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderRadius: 12, padding: "22px 20px", cursor: "pointer", font: "inherit", color: "inherit", overflow: "hidden" }}
-          >
-            <div style={{ position: "absolute", top: 10, right: 16, fontSize: 42, fontWeight: 900, color: "rgba(255,255,255,0.05)" }}>{s.num}</div>
-            <div style={{ fontSize: 26, marginBottom: 10 }}>{s.icon}</div>
-            <div style={{ fontSize: 15, fontWeight: 800, marginBottom: 8 }}>{s.title}</div>
-            <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.55, marginBottom: 14 }}>{s.text}</div>
-            <div style={{ fontSize: 12, fontWeight: 800, color: "#2DE3D6" }}>{s.cta}</div>
-          </button>
-        ))}
+      <div style={{ position: "relative" }}>
+        {/* linea della timeline: verticale, dietro ai pallini numerati */}
+        <div style={{ position: "absolute", left: 19, top: 20, bottom: 20, width: 2, background: "linear-gradient(180deg, #2DE3D6, #FFC24B, #FF3D8A)", opacity: 0.35 }} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          {t.steps.map((s, i) => {
+            const isLast = i === t.steps.length - 1;
+            return <TimelineStep key={s.num} step={s} index={i} color={dotColors[i]} isLast={isLast} onClick={actions[i]} />;
+          })}
+        </div>
       </div>
     </div>
+  );
+}
+
+function TimelineStep({ step, index, color, isLast, onClick }) {
+  const [ref, inView] = useRevealOnScroll();
+  return (
+    <button
+      ref={ref}
+      onClick={onClick}
+      style={{
+        display: "flex", alignItems: "flex-start", gap: 18, textAlign: "left",
+        background: "none", border: "none", cursor: "pointer", font: "inherit", color: "inherit",
+        padding: 0, position: "relative",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(24px)",
+        transition: `opacity 550ms ease ${index * 150}ms, transform 550ms ease ${index * 150}ms`,
+      }}
+    >
+      <div style={{
+        flexShrink: 0, width: 40, height: 40, borderRadius: "50%",
+        background: "#0B1026", border: `2px solid ${color}`, boxShadow: `0 0 14px ${color}66`,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        fontSize: 14, fontWeight: 900, color, zIndex: 1,
+      }}>
+        {step.num}
+      </div>
+      <div style={{
+        flex: 1, position: "relative", overflow: "hidden",
+        background: isLast ? "linear-gradient(135deg, rgba(255,61,138,0.14), rgba(255,194,75,0.08) 60%, #0F1530)" : "#0F1530",
+        border: isLast ? "1px solid rgba(255,61,138,0.5)" : "1px solid #1C2340",
+        borderRadius: 12, padding: isLast ? "26px 24px" : "18px 20px",
+        boxShadow: isLast ? "0 0 28px rgba(255,61,138,0.18)" : "none",
+      }}>
+        <div style={{ fontSize: isLast ? 30 : 24, marginBottom: 8 }}>{step.icon}</div>
+        <div style={{ fontSize: isLast ? 19 : 15, fontWeight: 800, marginBottom: 8, lineHeight: 1.25 }}>{step.title}</div>
+        <div style={{ fontSize: isLast ? 14 : 13, color: isLast ? "#E4E6F2" : "#C7CBDA", lineHeight: 1.55, marginBottom: 14, maxWidth: isLast ? 560 : "none" }}>{step.text}</div>
+        <div style={{ fontSize: isLast ? 13 : 12, fontWeight: 800, color }}>{step.cta}</div>
+      </div>
+    </button>
   );
 }
 

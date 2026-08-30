@@ -1607,99 +1607,77 @@ const FEATURES_HUB_TEXT = {
   it: {
     eyebrow: "Perché Vice // Radar",
     title: "Funzionalità",
-    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: cinque strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
+    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
+    freeEyebrow: "Sempre gratis",
+    freeTitle: "Gli strumenti che ti servono subito",
+    premiumEyebrow: "Sblocca tutto",
+    premiumTitle: "L'esperienza completa Vice // Radar",
+    premiumSubtitle: "Tutto quello che hai visto sopra, più gli strumenti avanzati per chi vuole spremere ogni vantaggio possibile da Leonida.",
     premiumBadge: "✨ Premium",
+    priceNote: "Prezzo da annunciare, più vicino al lancio",
     ctaHeading: "Vuoi essere il primo a provarli?",
     ctaText: "Iscriviti alla newsletter qui sotto: ti avvisiamo il giorno stesso in cui Mappa, Trucchi, Missioni, Glitch e Assistente IA si sbloccano.",
   },
   en: {
     eyebrow: "Why Vice // Radar",
     title: "Features",
-    intro: "Not another cluttered wiki or an ad-stuffed site: five tools built to stay open while you play, with precise, always up-to-date data. All five unlock on November 19, 2026, launch day.",
+    intro: "Not another cluttered wiki or an ad-stuffed site: tools built to stay open while you play, with precise, always up-to-date data. All of them unlock on November 19, 2026, launch day.",
+    freeEyebrow: "Always free",
+    freeTitle: "The tools you need right away",
+    premiumEyebrow: "Unlock it all",
+    premiumTitle: "The complete Vice // Radar experience",
+    premiumSubtitle: "Everything you saw above, plus the advanced tools for squeezing every advantage out of Leonida.",
     premiumBadge: "✨ Premium",
+    priceNote: "Price to be announced, closer to launch",
     ctaHeading: "Want to be the first to try them?",
     ctaText: "Sign up for the newsletter below: we'll notify you the moment Map, Cheats, Missions, Glitches and AI Assistant unlock.",
   },
 };
 
-const PLANS_TEXT = {
-  it: {
-    eyebrow: "Free vs Premium",
-    title: "Cosa include ogni piano",
-    intro: "Il prezzo non è ancora deciso: lo confermeremo più vicino al lancio. Ecco intanto cosa include ciascun piano.",
-    freeName: "Free",
-    freeDesc: "Gli strumenti base per giocare meglio, sempre gratuiti.",
-    premiumName: "Premium",
-    premiumDesc: "Tutto il Free, più gli strumenti avanzati per l'online.",
-    premiumBadge: "✨ Premium",
-    priceNote: "Prezzo da annunciare",
-  },
-  en: {
-    eyebrow: "Free vs Premium",
-    title: "What each plan includes",
-    intro: "Pricing isn't decided yet — we'll confirm it closer to launch. Here's what to expect from each plan in the meantime.",
-    freeName: "Free",
-    freeDesc: "The essential tools to play better, always free.",
-    premiumName: "Premium",
-    premiumDesc: "Everything in Free, plus the advanced tools for online.",
-    premiumBadge: "✨ Premium",
-    priceNote: "Price to be announced",
-  },
-};
-
-/* tabella di confronto Free/Premium: riusa titoli/tema delle stesse 5 funzioni bloccate
-   (COMING_SOON_COPY / LOCK_THEME / PREMIUM_VIEWS) per non duplicare i testi altrove */
-function PlansComparison({ lang }) {
-  const t = PLANS_TEXT[lang];
-  const freeKeys = LOCKED_VIEWS.filter((k) => !PREMIUM_VIEWS.includes(k));
-
-  function renderFeature(key) {
-    const isPremiumOnly = PREMIUM_VIEWS.includes(key);
-    return (
-      <li key={key} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#E4E6F2" }}>
-        <span style={{ color: isPremiumOnly ? "#FFC24B" : "#2DE3D6", fontWeight: 900 }}>✓</span>
-        <span>{LOCK_THEME[key].heroIcon} {COMING_SOON_COPY[lang][key].titolo}</span>
-      </li>
-    );
-  }
-
-  return (
-    <div style={{ padding: "8px 16px 40px", maxWidth: 760, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
-      <div style={{ textAlign: "center", marginBottom: 28 }}>
-        <div style={{ fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{t.eyebrow}</div>
-        <h2 style={{ fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 12px", textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
-        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>{t.intro}</div>
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 18 }}>
-        <div style={{ background: "#0F1530", border: "1px solid #1C2340", borderRadius: 12, padding: "24px 22px" }}>
-          <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 4 }}>{t.freeName}</div>
-          <div style={{ fontSize: 13, color: "#C7CBDA", marginBottom: 18 }}>{t.freeDesc}</div>
-          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-            {freeKeys.map(renderFeature)}
-          </ul>
-        </div>
-        <div style={{ position: "relative", background: "linear-gradient(135deg, #1A1440, #0F1530)", border: "1px solid rgba(255,194,75,0.45)", borderRadius: 12, padding: "24px 22px" }}>
-          <div style={{ position: "absolute", top: 14, right: 14, fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#0B1026", background: "#FFC24B", borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
-            {t.premiumBadge}
-          </div>
-          <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 4 }}>{t.premiumName}</div>
-          <div style={{ fontSize: 13, color: "#C7CBDA", marginBottom: 18 }}>{t.premiumDesc}</div>
-          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-            {LOCKED_VIEWS.map(renderFeature)}
-          </ul>
-        </div>
-      </div>
-      <div style={{ textAlign: "center", fontSize: 11, color: "#7A8099", marginTop: 18, textTransform: "uppercase", letterSpacing: 1 }}>{t.priceNote}</div>
-    </div>
-  );
-}
 
 /* pagina hub che raggruppa le 4 funzioni ancora bloccate (mappa, trucchi, missioni, assistente):
    card dettagliate con tagline e benefici concreti (a differenza del riassunto rapido in home),
    pensate per convincere a tornare/iscriversi prima del lancio. Ogni card apre comunque la
    relativa ComingSoonPage per chi vuole solo la versione breve. */
+/* card di una singola funzione: usata sia per le gratuite (stile normale) sia dentro la
+   sezione Premium (stile scenografico), tramite la prop `premiumStyle` */
+function FeatureCard({ theme, copy, onSelect, lang, premiumStyle = false }) {
+  return (
+    <div
+      style={
+        premiumStyle
+          ? { textAlign: "left", position: "relative", background: "rgba(11,16,38,0.55)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 12, padding: "20px 18px", display: "flex", flexDirection: "column" }
+          : { textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${theme.accent}`, borderRadius: 12, padding: "22px 20px", overflow: "hidden", display: "flex", flexDirection: "column" }
+      }
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+        <div style={{ fontSize: 22, width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", background: `${theme.accent}22`, flexShrink: 0 }}>
+          {theme.heroIcon}
+        </div>
+        <div style={{ fontSize: 17, fontWeight: 800 }}>{copy.titolo}</div>
+      </div>
+      <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: 14 }}>{copy.tagline}</div>
+      <ul style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75, flex: 1 }}>
+        {copy.bullets.map((b) => <li key={b}>{b}</li>)}
+      </ul>
+      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
+        <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
+          {COMING_SOON_BADGE[lang]}
+        </div>
+      </div>
+      <button
+        onClick={onSelect}
+        style={{ alignSelf: "flex-start", background: "none", border: "none", color: theme.accent, fontSize: 12, fontWeight: 800, letterSpacing: 0.3, cursor: "pointer", padding: 0, textTransform: "uppercase" }}
+      >
+        {lang === "en" ? "Details →" : "Dettagli →"}
+      </button>
+    </div>
+  );
+}
+
 function FeaturesHubPage({ onSelect, lang }) {
   const t = FEATURES_HUB_TEXT[lang];
+  const freeKeys = LOCKED_VIEWS.filter((k) => !PREMIUM_VIEWS.includes(k));
   return (
     <div style={{ flex: 1, padding: "40px 16px 48px", maxWidth: 820, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
       <div style={{ textAlign: "center", marginBottom: 36 }}>
@@ -1707,54 +1685,40 @@ function FeaturesHubPage({ onSelect, lang }) {
         <h2 style={{ fontSize: "clamp(26px, 4.5vw, 40px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 14px", textTransform: "uppercase", color: "#F2F0E9" }}>{t.title}</h2>
         <div style={{ fontSize: 14, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 620, margin: "0 auto" }}>{t.intro}</div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18 }}>
-        {LOCKED_VIEWS.map((key) => {
-          const theme = LOCK_THEME[key];
-          const copy = COMING_SOON_COPY[lang][key];
-          const isPremium = PREMIUM_VIEWS.includes(key);
-          return (
-            <div
-              key={key}
-              style={{ textAlign: "left", position: "relative", background: "#0F1530", border: "1px solid #1C2340", borderTop: `3px solid ${theme.accent}`, borderRadius: 12, padding: "22px 20px", overflow: "hidden", display: "flex", flexDirection: "column" }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-                <div style={{ fontSize: 22, width: 44, height: 44, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", background: `${theme.accent}22`, flexShrink: 0 }}>
-                  {theme.heroIcon}
-                </div>
-                <div>
-                  <div style={{ fontSize: 17, fontWeight: 800 }}>{copy.titolo}</div>
-                </div>
-              </div>
-              <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: 14 }}>{copy.tagline}</div>
-              <ul style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75, flex: 1 }}>
-                {copy.bullets.map((b) => <li key={b}>{b}</li>)}
-              </ul>
-              <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
-                <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
-                  {COMING_SOON_BADGE[lang]}
-                </div>
-                {isPremium && (
-                  <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: "#0B1026", background: "#FFC24B", borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
-                    {t.premiumBadge}
-                  </div>
-                )}
-              </div>
-              <button
-                onClick={() => onSelect(key)}
-                style={{ alignSelf: "flex-start", background: "none", border: "none", color: theme.accent, fontSize: 12, fontWeight: 800, letterSpacing: 0.3, cursor: "pointer", padding: 0, textTransform: "uppercase" }}
-              >
-                {lang === "en" ? "Details →" : "Dettagli →"}
-              </button>
-            </div>
-          );
-        })}
+
+      {/* prima le funzioni gratuite, senza alcun accenno al Premium: l'utente deve
+         prima innamorarsi di queste */}
+      <div style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6", fontWeight: 800, marginBottom: 16, textTransform: "uppercase" }}>{t.freeEyebrow}</div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18, marginBottom: 56 }}>
+        {freeKeys.map((key) => (
+          <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} onSelect={() => onSelect(key)} lang={lang} />
+        ))}
       </div>
 
-      <div style={{ marginTop: 48 }}>
-        <PlansComparison lang={lang} />
+      {/* poi, solo dopo, il reveal del Premium: una sola card grande e scenografica invece
+         di una tabella di confronto, per non far sembrare il Premium un ripiego ansiogeno */}
+      <div style={{
+        position: "relative", overflow: "hidden", borderRadius: 20, padding: "40px 28px",
+        background: "linear-gradient(135deg, rgba(255,61,138,0.18), rgba(255,194,75,0.1) 45%, #0F1530 85%)",
+        border: "1px solid rgba(255,61,138,0.5)", boxShadow: "0 0 50px rgba(255,61,138,0.2)",
+      }}>
+        <div style={{ position: "absolute", top: "-30%", right: "-10%", width: 340, height: 340, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,194,75,0.35) 0%, rgba(255,61,138,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
+        <div style={{ position: "relative", textAlign: "center", marginBottom: 30 }}>
+          <div style={{ fontSize: 12, letterSpacing: 3, color: "#FFC24B", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>✨ {t.premiumEyebrow}</div>
+          <h3 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 14px", textTransform: "uppercase", background: "linear-gradient(90deg,#FF3D8A,#FFC24B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            {t.premiumTitle}
+          </h3>
+          <div style={{ fontSize: 14, color: "#E4E6F2", lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>{t.premiumSubtitle}</div>
+        </div>
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 22 }}>
+          {PREMIUM_VIEWS.map((key) => (
+            <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} onSelect={() => onSelect(key)} lang={lang} premiumStyle />
+          ))}
+        </div>
+        <div style={{ position: "relative", textAlign: "center", fontSize: 11, color: "#C7CBDA", textTransform: "uppercase", letterSpacing: 1 }}>{t.priceNote}</div>
       </div>
 
-      <div style={{ textAlign: "center", marginTop: 8, marginBottom: 24 }}>
+      <div style={{ textAlign: "center", marginTop: 48, marginBottom: 24 }}>
         <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 6 }}>{t.ctaHeading}</div>
         <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>{t.ctaText}</div>
       </div>

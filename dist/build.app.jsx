@@ -1606,8 +1606,10 @@ function ComingSoonPage({ view, onGoToNews, onBack, lang }) {
 const FEATURES_HUB_TEXT = {
   it: {
     eyebrow: "Perché Vice // Radar",
-    title: "Funzionalità",
-    intro: "Non un'altra wiki disordinata o un sito pieno di pubblicità: strumenti pensati per restare aperti mentre giochi, con dati precisi e sempre aggiornati. Si sbloccano tutti il 19 novembre 2026, giorno del lancio.",
+    title: "Il tuo kit per Leonida",
+    intro: "Trova luoghi, attività e segreti. Trucchi, missioni, glitch e assistente IA: tutto in un posto solo, pronto il 19 novembre 2026.",
+    detailsBtn: "Dettagli →",
+    lessBtn: "Meno dettagli ↑",
     freeEyebrow: "Sempre gratis",
     freeTitle: "Gli strumenti che ti servono subito",
     premiumEyebrow: "Sblocca tutto",
@@ -1620,8 +1622,10 @@ const FEATURES_HUB_TEXT = {
   },
   en: {
     eyebrow: "Why Vice // Radar",
-    title: "Features",
-    intro: "Not another cluttered wiki or an ad-stuffed site: tools built to stay open while you play, with precise, always up-to-date data. All of them unlock on November 19, 2026, launch day.",
+    title: "Your kit for Leonida",
+    intro: "Find locations, activities and secrets. Cheats, missions, glitches and an AI assistant: all in one place, ready on November 19, 2026.",
+    detailsBtn: "Details →",
+    lessBtn: "Less details ↑",
     freeEyebrow: "Always free",
     freeTitle: "The tools you need right away",
     premiumEyebrow: "Unlock it all",
@@ -1641,7 +1645,12 @@ const FEATURES_HUB_TEXT = {
    relativa ComingSoonPage per chi vuole solo la versione breve. */
 /* card di una singola funzione: usata sia per le gratuite (stile normale) sia dentro la
    sezione Premium (stile scenografico), tramite la prop `premiumStyle` */
-function FeatureCard({ theme, copy, onSelect, lang, premiumStyle = false }) {
+/* card compatta in stile "app": icona, titolo, tagline e badge sempre visibili; i dettagli
+   (bullet list) restano chiusi finche' non si preme "Dettagli", per un effetto tile/app
+   invece di una pagina piena di testo da leggere tutta d'un fiato */
+function FeatureCard({ theme, copy, lang, premiumStyle = false }) {
+  const [open, setOpen] = useState(false);
+  const t = FEATURES_HUB_TEXT[lang];
   return (
     <div
       style={
@@ -1656,26 +1665,29 @@ function FeatureCard({ theme, copy, onSelect, lang, premiumStyle = false }) {
         </div>
         <div style={{ fontSize: 17, fontWeight: 800 }}>{copy.titolo}</div>
       </div>
-      <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: 14 }}>{copy.tagline}</div>
-      <ul style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75, flex: 1 }}>
-        {copy.bullets.map((b) => <li key={b}>{b}</li>)}
-      </ul>
-      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
+      <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: open ? 14 : 4 }}>{copy.tagline}</div>
+      {open && (
+        <ul className="vr-fade-in" style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75 }}>
+          {copy.bullets.map((b) => <li key={b}>{b}</li>)}
+        </ul>
+      )}
+      <div style={{ flex: 1 }} />
+      <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, marginTop: 10, flexWrap: "wrap" }}>
         <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
           {COMING_SOON_BADGE[lang]}
         </div>
       </div>
       <button
-        onClick={onSelect}
+        onClick={() => setOpen((v) => !v)}
         style={{ alignSelf: "flex-start", background: "none", border: "none", color: theme.accent, fontSize: 12, fontWeight: 800, letterSpacing: 0.3, cursor: "pointer", padding: 0, textTransform: "uppercase" }}
       >
-        {lang === "en" ? "Details →" : "Dettagli →"}
+        {open ? t.lessBtn : t.detailsBtn}
       </button>
     </div>
   );
 }
 
-function FeaturesHubPage({ onSelect, lang }) {
+function FeaturesHubPage({ lang }) {
   const t = FEATURES_HUB_TEXT[lang];
   const freeKeys = LOCKED_VIEWS.filter((k) => !PREMIUM_VIEWS.includes(k));
   return (
@@ -1691,7 +1703,7 @@ function FeaturesHubPage({ onSelect, lang }) {
       <div style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6", fontWeight: 800, marginBottom: 16, textTransform: "uppercase" }}>{t.freeEyebrow}</div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18, marginBottom: 56 }}>
         {freeKeys.map((key) => (
-          <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} onSelect={() => onSelect(key)} lang={lang} />
+          <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} lang={lang} />
         ))}
       </div>
 
@@ -1712,7 +1724,7 @@ function FeaturesHubPage({ onSelect, lang }) {
         </div>
         <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 22 }}>
           {PREMIUM_VIEWS.map((key) => (
-            <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} onSelect={() => onSelect(key)} lang={lang} premiumStyle />
+            <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} lang={lang} premiumStyle />
           ))}
         </div>
         <div style={{ position: "relative", textAlign: "center", fontSize: 11, color: "#C7CBDA", textTransform: "uppercase", letterSpacing: 1 }}>{t.priceNote}</div>
@@ -2192,7 +2204,7 @@ function GTA6Map() {
           <SupportoPage lang={lang} />
         </div>
       ) : view === "funzionalita" ? (
-        <FeaturesHubPage onSelect={(key) => setView(key)} lang={lang} />
+        <FeaturesHubPage lang={lang} />
       ) : LOCKED_VIEWS.includes(view) ? (
         <ComingSoonPage view={view} onGoToNews={() => setView("news")} onBack={() => setView("funzionalita")} lang={lang} />
       ) : view === "news" ? (

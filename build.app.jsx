@@ -1665,12 +1665,14 @@ function FeatureCard({ theme, copy, lang, premiumStyle = false }) {
         </div>
         <div style={{ fontSize: 17, fontWeight: 800 }}>{copy.titolo}</div>
       </div>
-      <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: open ? 14 : 4 }}>{copy.tagline}</div>
-      {open && (
-        <ul className="vr-fade-in" style={{ margin: "0 0 16px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75 }}>
-          {copy.bullets.map((b) => <li key={b}>{b}</li>)}
-        </ul>
-      )}
+      <div style={{ fontSize: 13, color: theme.accent, fontWeight: 700, lineHeight: 1.5, marginBottom: 4 }}>{copy.tagline}</div>
+      <div className={`vr-accordion${open ? " vr-accordion-open" : ""}`}>
+        <div>
+          <ul style={{ margin: "10px 0 6px", paddingLeft: 18, fontSize: 12.5, color: "#C7CBDA", lineHeight: 1.75 }}>
+            {copy.bullets.map((b) => <li key={b}>{b}</li>)}
+          </ul>
+        </div>
+      </div>
       <div style={{ flex: 1 }} />
       <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14, marginTop: 10, flexWrap: "wrap" }}>
         <div style={{ display: "inline-block", fontSize: 10, letterSpacing: 1.5, fontWeight: 800, color: theme.accent, border: `1px solid ${theme.accent}`, borderRadius: 20, padding: "4px 10px", textTransform: "uppercase" }}>
@@ -1701,7 +1703,7 @@ function FeaturesHubPage({ lang }) {
       {/* prima le funzioni gratuite, senza alcun accenno al Premium: l'utente deve
          prima innamorarsi di queste */}
       <div style={{ fontSize: 11, letterSpacing: 2, color: "#2DE3D6", fontWeight: 800, marginBottom: 16, textTransform: "uppercase" }}>{t.freeEyebrow}</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18, marginBottom: 56 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", alignItems: "start", gap: 18, marginBottom: 56 }}>
         {freeKeys.map((key) => (
           <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} lang={lang} />
         ))}
@@ -1709,12 +1711,13 @@ function FeaturesHubPage({ lang }) {
 
       {/* poi, solo dopo, il reveal del Premium: una sola card grande e scenografica invece
          di una tabella di confronto, per non far sembrare il Premium un ripiego ansiogeno */}
-      <div style={{
+      <div className="vr-neon-cycle" style={{
         position: "relative", overflow: "hidden", borderRadius: 20, padding: "40px 28px",
-        background: "linear-gradient(135deg, rgba(255,61,138,0.18), rgba(255,194,75,0.1) 45%, #0F1530 85%)",
-        border: "1px solid rgba(255,61,138,0.5)", boxShadow: "0 0 50px rgba(255,61,138,0.2)",
+        background: "linear-gradient(135deg, rgba(255,61,138,0.26), rgba(255,194,75,0.16) 45%, #0F1530 85%)",
+        border: "2px solid rgba(255,61,138,0.9)",
       }}>
-        <div style={{ position: "absolute", top: "-30%", right: "-10%", width: 340, height: 340, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,194,75,0.35) 0%, rgba(255,61,138,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "-30%", right: "-10%", width: 380, height: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,194,75,0.5) 0%, rgba(255,61,138,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "-25%", left: "-10%", width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,227,214,0.35) 0%, rgba(45,227,214,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
         <div style={{ position: "relative", textAlign: "center", marginBottom: 30 }}>
           <div style={{ fontSize: 12, letterSpacing: 3, color: "#FFC24B", fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>✨ {t.premiumEyebrow}</div>
           <h3 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, letterSpacing: 0.5, margin: "0 0 14px", textTransform: "uppercase", background: "linear-gradient(90deg,#FF3D8A,#FFC24B)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
@@ -1722,7 +1725,7 @@ function FeaturesHubPage({ lang }) {
           </h3>
           <div style={{ fontSize: 14, color: "#E4E6F2", lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>{t.premiumSubtitle}</div>
         </div>
-        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 22 }}>
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", alignItems: "start", gap: 16, marginBottom: 22 }}>
           {PREMIUM_VIEWS.map((key) => (
             <FeatureCard key={key} theme={LOCK_THEME[key]} copy={COMING_SOON_COPY[lang][key]} lang={lang} premiumStyle />
           ))}

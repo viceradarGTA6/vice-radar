@@ -942,9 +942,9 @@ function SiteHero({ onGoToGame, onGoToNews, onSelectFeature, lang }) {
   const t = SITE_HERO_TEXT[lang];
 
   return (
-    <div style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #0B1026 0%, #171E45 55%, #0B1026 100%)", padding: "clamp(48px, 9vw, 96px) 20px clamp(56px, 8vw, 88px)", textAlign: "center" }}>
-      {/* bagliore dietro al titolo, effetto "sole" synthwave */}
-      <div style={{ position: "absolute", top: "-20%", left: "50%", transform: "translateX(-50%)", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,227,214,0.35) 0%, rgba(255,61,138,0.18) 40%, rgba(255,194,75,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
+    <div style={{ position: "relative", overflow: "hidden", background: "linear-gradient(180deg, #0B1026 0%, #171E45 55%, #0B1026 100%)", padding: "clamp(56px, 11vw, 128px) 20px clamp(64px, 10vw, 110px)", textAlign: "center" }}>
+      {/* bagliore dietro al titolo, effetto "sole" synthwave: piu' grande e piu' intenso per un impatto immediato */}
+      <div style={{ position: "absolute", top: "-25%", left: "50%", transform: "translateX(-50%)", width: 820, height: 820, borderRadius: "50%", background: "radial-gradient(circle, rgba(45,227,214,0.45) 0%, rgba(255,61,138,0.22) 40%, rgba(255,194,75,0) 70%)", filter: "blur(10px)", pointerEvents: "none" }} />
 
       {/* griglia prospettica in fondo, stile skyline al tramonto */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "45%", overflow: "hidden", pointerEvents: "none", opacity: 0.5 }}>
@@ -958,24 +958,19 @@ function SiteHero({ onGoToGame, onGoToNews, onSelectFeature, lang }) {
         }} />
       </div>
 
-      <div style={{ position: "relative", maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ display: "inline-block", fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 16, textTransform: "uppercase", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "6px 16px" }}>
+      {/* Gerarchia essenziale, con piu' respiro tra un blocco e l'altro: tag -> titolo -> tagline -> pill -> UN solo CTA.
+         Il resto (descrizione estesa, notizie live, link al gioco) e' sotto, nella sezione "come funziona" */}
+      <div style={{ position: "relative", maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ display: "inline-block", fontSize: 12, letterSpacing: 3, color: "#2DE3D6", fontWeight: 800, marginBottom: 22, textTransform: "uppercase", border: "1px solid rgba(45,227,214,0.4)", borderRadius: 20, padding: "6px 16px" }}>
           {t.tag}
         </div>
-        <h1 style={{ fontSize: "clamp(34px, 7vw, 64px)", fontWeight: 900, lineHeight: 1.05, letterSpacing: 0.5, margin: "0 0 16px", textTransform: "uppercase", background: "linear-gradient(90deg,#2DE3D6,#FFC24B,#FF3D8A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-          {t.titleLine1}<br />{t.titleLine2}
+        <h1 style={{ fontSize: "clamp(40px, 9vw, 84px)", fontWeight: 900, lineHeight: 1.02, letterSpacing: 0.5, margin: "0 0 18px", textTransform: "uppercase", background: "linear-gradient(90deg,#2DE3D6,#FFC24B,#FF3D8A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          {t.titleLine1}
         </h1>
-        <p style={{ fontSize: "clamp(14px, 2vw, 17px)", color: "#E4E6F2", lineHeight: 1.6, maxWidth: 560, margin: "0 auto 20px" }}>
-          {t.subtitle}
-        </p>
-        <button
-          onClick={onGoToNews}
-          style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 24, background: "rgba(45,227,214,0.08)", border: "1px solid rgba(45,227,214,0.5)", borderRadius: 20, padding: "8px 16px", color: "#2DE3D6", fontSize: 12, fontWeight: 800, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", font: "inherit" }}
-        >
-          <span className="vr-live-dot" />
-          {t.liveBadge}
-        </button>
-        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 28, flexWrap: "wrap" }}>
+        <div style={{ fontSize: "clamp(16px, 2.6vw, 22px)", color: "#F2F0E9", fontWeight: 700, marginBottom: 32 }}>
+          {t.titleLine2}
+        </div>
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 36, flexWrap: "wrap" }}>
           {t.pills.map((p, i) => (
             <button
               key={p}
@@ -986,17 +981,29 @@ function SiteHero({ onGoToGame, onGoToNews, onSelectFeature, lang }) {
             </button>
           ))}
         </div>
-        <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+        <button
+          onClick={() => scrollToSectionWithHighlight("funzioni")}
+          className="vr-cta-pulse"
+          style={{ display: "inline-flex", alignItems: "center", background: "#2DE3D6", border: "none", borderRadius: 10, padding: "18px 40px", color: "#0B1026", fontWeight: 900, fontSize: "clamp(15px, 1.8vw, 17px)", letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
+        >
+          {t.btnFeatures}
+        </button>
+
+        {/* sotto il fold principale, piu' defilato: descrizione estesa + notizie live + link al gioco */}
+        <p style={{ fontSize: 13, color: "#9AA0C0", lineHeight: 1.6, maxWidth: 520, margin: "40px auto 16px" }}>
+          {t.subtitle}
+        </p>
+        <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
           <button
-            onClick={() => scrollToSectionWithHighlight("funzioni")}
-            className="vr-cta-pulse"
-            style={{ display: "inline-flex", alignItems: "center", background: "#2DE3D6", border: "none", borderRadius: 8, padding: "14px 26px", color: "#0B1026", fontWeight: 900, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
+            onClick={onGoToNews}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "none", border: "none", color: "#2DE3D6", fontSize: 12, fontWeight: 800, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", font: "inherit", padding: 0 }}
           >
-            {t.btnFeatures}
+            <span className="vr-live-dot" />
+            {t.liveBadge}
           </button>
           <button
             onClick={onGoToGame}
-            style={{ background: "transparent", border: "1px solid #FFC24B", borderRadius: 8, padding: "14px 26px", color: "#FFC24B", fontWeight: 800, fontSize: 14, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase" }}
+            style={{ background: "none", border: "none", color: "#FFC24B", fontSize: 12, fontWeight: 800, letterSpacing: 0.5, cursor: "pointer", textTransform: "uppercase", font: "inherit", padding: 0 }}
           >
             {t.btnGame}
           </button>

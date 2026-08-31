@@ -1396,20 +1396,53 @@ function GiocoPage({ onGoToNews, lang }) {
 }
 
 const SUPPORT_TEXT = {
-  it: { eyebrow: "Assistenza", intro: "Hai trovato un problema sul sito o hai un suggerimento? Scrivici, ti rispondiamo il prima possibile." },
-  en: { eyebrow: "Support", intro: "Found a problem on the site or have a suggestion? Write to us, we'll get back to you as soon as possible." },
+  it: {
+    eyebrow: "Assistenza",
+    intro: "Il supporto di Vice // Radar non è solo assistenza: è anche il modo più diretto per aiutarci a costruire il sito insieme a te. Scegli cosa vuoi dirci:",
+    cards: [
+      { icon: "🐛", accent: "#FF3D8A", question: "Hai trovato un problema?", desc: "Segnalaci un bug del sito: cosa non funziona, dove e su quale dispositivo lo hai visto.", cta: "Segnala un bug", subject: "[Bug] Segnalazione problema" },
+      { icon: "💡", accent: "#FFC24B", question: "Hai un'idea?", desc: "Suggerisci una funzione o una modifica che vorresti vedere su Vice // Radar.", cta: "Suggerisci una funzione", subject: "[Idea] Suggerimento funzione" },
+      { icon: "📰", accent: "#2DE3D6", question: "Hai una notizia?", desc: "Hai visto una notizia o un rumor su GTA6 che ci siamo persi? Segnalacelo.", cta: "Contattaci", subject: "[Notizia] Segnalazione notizia" },
+    ],
+    fallback: "Preferisci scrivere direttamente?",
+  },
+  en: {
+    eyebrow: "Support",
+    intro: "Support on Vice // Radar isn't just help — it's also the most direct way to help us build the site with you. Pick what you want to tell us:",
+    cards: [
+      { icon: "🐛", accent: "#FF3D8A", question: "Found a problem?", desc: "Report a bug on the site: what's broken, where, and on which device you saw it.", cta: "Report a bug", subject: "[Bug] Problem report" },
+      { icon: "💡", accent: "#FFC24B", question: "Got an idea?", desc: "Suggest a feature or change you'd like to see on Vice // Radar.", cta: "Suggest a feature", subject: "[Idea] Feature suggestion" },
+      { icon: "📰", accent: "#2DE3D6", question: "Got news?", desc: "Spotted a GTA6 news item or rumor we missed? Let us know.", cta: "Contact us", subject: "[News] News tip" },
+    ],
+    fallback: "Prefer to write directly?",
+  },
 };
 
 function SupportoPage({ lang }) {
   const t = SUPPORT_TEXT[lang];
   return (
-    <div style={{ padding: "20px 16px 40px", maxWidth: 700, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
+    <div style={{ padding: "20px 16px 40px", maxWidth: 900, margin: "0 auto", width: "100%", boxSizing: "border-box" }}>
       <div style={{ fontSize: 13, letterSpacing: 2, color: "#FFC24B", fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>{t.eyebrow}</div>
-      <div style={{ background: "#0F1530", border: "1px solid #1C2340", borderRadius: 10, padding: 16 }}>
-        <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, marginBottom: 12 }}>
-          {t.intro}
-        </div>
-        <a href={`mailto:${SUPPORT_EMAIL}`} style={{ display: "inline-block", color: "#2DE3D6", border: "1px solid #2DE3D6", borderRadius: 6, padding: "9px 14px", fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
+      <div style={{ fontSize: 13, color: "#C7CBDA", lineHeight: 1.6, marginBottom: 20, maxWidth: 580 }}>
+        {t.intro}
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 14, marginBottom: 22 }}>
+        {t.cards.map((c, i) => (
+          <div key={i} style={{ background: "#0F1530", border: `1px solid ${c.accent}44`, borderRadius: 12, padding: 18, display: "flex", flexDirection: "column", gap: 10 }}>
+            <div style={{ width: 40, height: 40, borderRadius: "50%", background: `${c.accent}22`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
+              {c.icon}
+            </div>
+            <div style={{ fontSize: 15, fontWeight: 800, color: "#F2F0E9" }}>{c.question}</div>
+            <div style={{ fontSize: 13, color: "#9AA0B4", lineHeight: 1.5, flexGrow: 1 }}>{c.desc}</div>
+            <a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(c.subject)}`} style={{ display: "inline-block", textAlign: "center", color: c.accent, border: `1px solid ${c.accent}`, borderRadius: 6, padding: "9px 14px", fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
+              {c.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+      <div style={{ fontSize: 12, color: "#6B7190" }}>
+        {t.fallback}{" "}
+        <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: "#2DE3D6", textDecoration: "none" }}>
           {SUPPORT_EMAIL}
         </a>
       </div>

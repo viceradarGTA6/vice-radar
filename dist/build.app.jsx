@@ -1400,9 +1400,9 @@ const SUPPORT_TEXT = {
     eyebrow: "Assistenza",
     intro: "Il supporto di Vice // Radar non è solo assistenza: è anche il modo più diretto per aiutarci a costruire il sito insieme a te. Scegli cosa vuoi dirci:",
     cards: [
-      { icon: "🐛", accent: "#FF3D8A", question: "Hai trovato un problema?", desc: "Segnalaci un bug del sito: cosa non funziona, dove e su quale dispositivo lo hai visto.", cta: "Segnala un bug", subject: "[Bug] Segnalazione problema" },
-      { icon: "💡", accent: "#FFC24B", question: "Hai un'idea?", desc: "Suggerisci una funzione o una modifica che vorresti vedere su Vice // Radar.", cta: "Suggerisci una funzione", subject: "[Idea] Suggerimento funzione" },
-      { icon: "📰", accent: "#2DE3D6", question: "Hai una notizia?", desc: "Hai visto una notizia o un rumor su GTA6 che ci siamo persi? Segnalacelo.", cta: "Contattaci", subject: "[Notizia] Segnalazione notizia" },
+      { icon: "🐛", accent: "#FF3D8A", question: "Hai trovato un problema?", desc: "Segnalaci un bug del sito: cosa non funziona, dove e su quale dispositivo lo hai visto.", cta: "Segnala un bug" },
+      { icon: "💡", accent: "#FFC24B", question: "Hai un'idea?", desc: "Suggerisci una funzione o una modifica che vorresti vedere su Vice // Radar.", cta: "Suggerisci una funzione" },
+      { icon: "📰", accent: "#2DE3D6", question: "Hai una notizia?", desc: "Hai visto una notizia o un rumor su GTA6 che ci siamo persi? Segnalacelo.", cta: "Contattaci" },
     ],
     fallback: "Preferisci scrivere direttamente?",
   },
@@ -1410,9 +1410,9 @@ const SUPPORT_TEXT = {
     eyebrow: "Support",
     intro: "Support on Vice // Radar isn't just help — it's also the most direct way to help us build the site with you. Pick what you want to tell us:",
     cards: [
-      { icon: "🐛", accent: "#FF3D8A", question: "Found a problem?", desc: "Report a bug on the site: what's broken, where, and on which device you saw it.", cta: "Report a bug", subject: "[Bug] Problem report" },
-      { icon: "💡", accent: "#FFC24B", question: "Got an idea?", desc: "Suggest a feature or change you'd like to see on Vice // Radar.", cta: "Suggest a feature", subject: "[Idea] Feature suggestion" },
-      { icon: "📰", accent: "#2DE3D6", question: "Got news?", desc: "Spotted a GTA6 news item or rumor we missed? Let us know.", cta: "Contact us", subject: "[News] News tip" },
+      { icon: "🐛", accent: "#FF3D8A", question: "Found a problem?", desc: "Report a bug on the site: what's broken, where, and on which device you saw it.", cta: "Report a bug" },
+      { icon: "💡", accent: "#FFC24B", question: "Got an idea?", desc: "Suggest a feature or change you'd like to see on Vice // Radar.", cta: "Suggest a feature" },
+      { icon: "📰", accent: "#2DE3D6", question: "Got news?", desc: "Spotted a GTA6 news item or rumor we missed? Let us know.", cta: "Contact us" },
     ],
     fallback: "Prefer to write directly?",
   },
@@ -1434,7 +1434,7 @@ function SupportoPage({ lang }) {
             </div>
             <div style={{ fontSize: 15, fontWeight: 800, color: "#F2F0E9" }}>{c.question}</div>
             <div style={{ fontSize: 13, color: "#9AA0B4", lineHeight: 1.5, flexGrow: 1 }}>{c.desc}</div>
-            <a href={`mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(c.subject)}`} style={{ display: "inline-block", textAlign: "center", color: c.accent, border: `1px solid ${c.accent}`, borderRadius: 6, padding: "9px 14px", fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
+            <a href={`mailto:${SUPPORT_EMAIL}`} style={{ display: "inline-block", textAlign: "center", color: c.accent, border: `1px solid ${c.accent}`, borderRadius: 6, padding: "9px 14px", fontSize: 13, fontWeight: 700, textDecoration: "none" }}>
               {c.cta}
             </a>
           </div>

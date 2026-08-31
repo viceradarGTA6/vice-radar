@@ -1404,7 +1404,6 @@ const SUPPORT_TEXT = {
       { icon: "💡", accent: "#FFC24B", question: "Hai un'idea?", desc: "Suggerisci una funzione o una modifica che vorresti vedere su Vice // Radar.", cta: "Suggerisci una funzione" },
       { icon: "📰", accent: "#2DE3D6", question: "Hai una notizia?", desc: "Hai visto una notizia o un rumor su GTA6 che ci siamo persi? Segnalacelo.", cta: "Contattaci" },
     ],
-    fallback: "Preferisci scrivere direttamente?",
   },
   en: {
     eyebrow: "Support",
@@ -1414,7 +1413,6 @@ const SUPPORT_TEXT = {
       { icon: "💡", accent: "#FFC24B", question: "Got an idea?", desc: "Suggest a feature or change you'd like to see on Vice // Radar.", cta: "Suggest a feature" },
       { icon: "📰", accent: "#2DE3D6", question: "Got news?", desc: "Spotted a GTA6 news item or rumor we missed? Let us know.", cta: "Contact us" },
     ],
-    fallback: "Prefer to write directly?",
   },
 };
 
@@ -1439,12 +1437,6 @@ function SupportoPage({ lang }) {
             </a>
           </div>
         ))}
-      </div>
-      <div style={{ fontSize: 12, color: "#6B7190" }}>
-        {t.fallback}{" "}
-        <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: "#2DE3D6", textDecoration: "none" }}>
-          {SUPPORT_EMAIL}
-        </a>
       </div>
     </div>
   );
